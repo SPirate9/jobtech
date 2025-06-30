@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "44e3f6c8-1420-4ba0-9334-95ce6d7f449d",
+		"name": "CHALLENGE DATA ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26794875"
+	},
+	"item": [
+		{
+			"name": "Liste des pays",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/countries/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"countries",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liste des compétences",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/skills/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"skills",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liste des sources",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/sources/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"sources",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liste des entreprises",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/companies/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"companies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Liste des offres d'emploi",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/jobs/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Offres d'emploi filtrées par pays",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/jobs/?country=FR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "FR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistiques salariales France-Python",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/jobs/salary_daily/?country=FR&skill=Python",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						"salary_daily",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "FR"
+						},
+						{
+							"key": "skill",
+							"value": "Python"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistiques salariales Allemagne-JavaScript",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/jobs/salary_daily/?country=DE&skill=JavaScript",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						"salary_daily",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "DE"
+						},
+						{
+							"key": "skill",
+							"value": "JavaScript"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistiques salariales Pays-Bas-Go",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/jobs/salary_daily/?country=NL&skill=Go",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						"salary_daily",
+						""
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "NL"
+						},
+						{
+							"key": "skill",
+							"value": "Go"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tendances des compétences",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/jobs/skill_trends/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"jobs",
+						"skill_trends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Documentation Swagger",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9d6b31f2460c466158b6e5418b4242de3de9e431",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/schema/swagger-ui/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"schema",
+						"swagger-ui",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

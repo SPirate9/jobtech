@@ -1,0 +1,26 @@
+2025-06-30 19:53:39.270 | INFO     | __main__:main:222 - Démarrage collecte TalentInsight
+2025-06-30 19:53:39.271 | INFO     | __main__:scrape_adzuna_api:74 - Démarrage API Adzuna
+2025-06-30 19:54:18.546 | INFO     | __main__:scrape_adzuna_api:128 - Adzuna terminé: 727 offres collectées
+2025-06-30 19:54:18.548 | INFO     | __main__:scrape_github_trends:132 - Démarrage GitHub API
+2025-06-30 19:54:41.057 | INFO     | __main__:scrape_github_trends:179 - GitHub terminé: 600 repos collectés
+2025-06-30 19:54:41.059 | INFO     | __main__:scrape_google_trends:29 - Démarrage Google Trends
+2025-06-30 19:54:41.164 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Python'
+2025-06-30 19:54:42.009 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Python' collectée.
+2025-06-30 19:55:07.010 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'JavaScript'
+2025-06-30 19:55:07.327 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'JavaScript' collectée.
+2025-06-30 19:55:32.332 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'React'
+2025-06-30 19:55:32.706 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'React' collectée.
+2025-06-30 19:56:00.712 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Go'
+2025-06-30 19:56:01.201 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Go' collectée.
+2025-06-30 19:56:32.202 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Rust'
+2025-06-30 19:56:32.606 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Rust' collectée.
+2025-06-30 19:56:55.610 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Data Science'
+2025-06-30 19:56:55.945 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Data Science' collectée.
+2025-06-30 19:57:30.949 | INFO     | __main__:scrape_google_trends:70 - Google Trends: 6 tendances collectées.
+2025-06-30 19:57:30.949 | INFO     | __main__:download_stackoverflow_survey:183 - Démarrage Stack Overflow Survey
+2025-06-30 19:57:35.955 | INFO     | __main__:download_stackoverflow_survey:214 - Stack Overflow: 159525875 bytes téléchargés
+2025-06-30 19:57:35.957 | INFO     | __main__:main:232 - Collecte terminée en 236.7s
+2025-06-30 19:57:35.957 | INFO     | __main__:main:238 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
+2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: google_trends.json (14282 bytes)
+2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: adzuna_jobs.json (633846 bytes)
+2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: github_trends.json (266843 bytes)

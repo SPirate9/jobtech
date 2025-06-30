@@ -1,0 +1,19 @@
+2025-06-30 20:06:09.223 | INFO     | __main__:main:213 - Démarrage nettoyage TalentInsight
+2025-06-30 20:06:09.224 | INFO     | __main__:clean_adzuna_jobs:22 - Nettoyage des données Adzuna
+2025-06-30 20:06:09.301 | INFO     | __main__:clean_adzuna_jobs:67 - Adzuna nettoyé: 727 offres
+2025-06-30 20:06:09.307 | INFO     | __main__:clean_github_trends:71 - Nettoyage des données GitHub
+2025-06-30 20:06:09.364 | INFO     | __main__:clean_github_trends:92 - GitHub nettoyé: 600 repos
+2025-06-30 20:06:09.364 | INFO     | __main__:clean_google_trends:96 - Nettoyage des données Google Trends
+2025-06-30 20:06:09.382 | INFO     | __main__:clean_google_trends:118 - Google Trends nettoyé: 558 points de données
+2025-06-30 20:06:09.383 | INFO     | __main__:clean_stackoverflow_survey:122 - Nettoyage des données Stack Overflow
+2025-06-30 20:06:15.595 | INFO     | __main__:clean_stackoverflow_survey:161 - Stack Overflow nettoyé: 7382 réponses
+2025-06-30 20:06:15.611 | INFO     | __main__:create_dimension_tables:167 - Création des tables de dimensions
+2025-06-30 20:06:15.624 | INFO     | __main__:create_dimension_tables:208 - Tables de dimensions créées
+2025-06-30 20:06:15.624 | INFO     | __main__:main:224 - Nettoyage terminé en 6.4s
+2025-06-30 20:06:15.625 | INFO     | __main__:main:231 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-06-30 20:06:15.625 | INFO     | __main__:main:231 - Fichier nettoyé: dim_countries.csv (185 bytes)
+2025-06-30 20:06:15.625 | INFO     | __main__:main:231 - Fichier nettoyé: adzuna_jobs_clean.csv (498976 bytes)
+2025-06-30 20:06:15.625 | INFO     | __main__:main:231 - Fichier nettoyé: dim_sources.csv (55 bytes)
+2025-06-30 20:06:15.625 | INFO     | __main__:main:231 - Fichier nettoyé: google_trends_clean.csv (27111 bytes)
+2025-06-30 20:06:15.626 | INFO     | __main__:main:231 - Fichier nettoyé: stackoverflow_survey_clean.csv (1846485 bytes)
+2025-06-30 20:06:15.626 | INFO     | __main__:main:231 - Fichier nettoyé: github_trends_clean.csv (148740 bytes)

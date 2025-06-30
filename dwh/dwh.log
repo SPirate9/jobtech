@@ -1,0 +1,24 @@
+2025-06-30 20:13:58.070 | INFO     | __main__:main:333 - Démarrage chargement Data Warehouse
+2025-06-30 20:13:58.071 | INFO     | __main__:create_dwh_schema:21 - Création du schéma Data Warehouse
+2025-06-30 20:13:58.093 | INFO     | __main__:create_dwh_schema:141 - Schéma Data Warehouse créé
+2025-06-30 20:13:58.093 | INFO     | __main__:load_dimensions:145 - Chargement des dimensions
+2025-06-30 20:13:58.166 | INFO     | __main__:load_dimensions:184 - Dimensions chargées
+2025-06-30 20:13:58.167 | INFO     | __main__:load_job_offers:188 - Chargement des offres d'emploi
+2025-06-30 20:13:59.413 | INFO     | __main__:load_job_offers:229 - Offres d'emploi chargées: 804
+2025-06-30 20:13:59.414 | INFO     | __main__:load_github_trends:233 - Chargement des tendances GitHub
+2025-06-30 20:14:00.429 | INFO     | __main__:load_github_trends:259 - Tendances GitHub chargées: 600
+2025-06-30 20:14:00.430 | INFO     | __main__:load_google_trends:263 - Chargement des tendances Google
+2025-06-30 20:14:00.561 | INFO     | __main__:load_google_trends:283 - Tendances recherche chargées: 558
+2025-06-30 20:14:00.562 | INFO     | __main__:load_stackoverflow_survey:287 - Chargement enquête Stack Overflow
+2025-06-30 20:14:01.501 | INFO     | __main__:load_stackoverflow_survey:309 - Enquête Stack Overflow chargée: 7382
+2025-06-30 20:14:01.503 | INFO     | __main__:create_indexes:313 - Création des index
+2025-06-30 20:14:01.522 | INFO     | __main__:create_indexes:328 - Index créés
+2025-06-30 20:14:01.523 | INFO     | __main__:main:351 - Table d_country: 5 lignes
+2025-06-30 20:14:01.523 | INFO     | __main__:main:351 - Table d_skill: 9 lignes
+2025-06-30 20:14:01.523 | INFO     | __main__:main:351 - Table d_source: 4 lignes
+2025-06-30 20:14:01.525 | INFO     | __main__:main:351 - Table f_job_offers: 804 lignes
+2025-06-30 20:14:01.525 | INFO     | __main__:main:351 - Table f_github_trends: 600 lignes
+2025-06-30 20:14:01.526 | INFO     | __main__:main:351 - Table f_search_trends: 558 lignes
+2025-06-30 20:14:01.526 | INFO     | __main__:main:351 - Table f_survey_responses: 7382 lignes
+2025-06-30 20:14:01.527 | INFO     | __main__:main:358 - Data Warehouse chargé en 3.5s
+2025-06-30 20:14:01.527 | INFO     | __main__:main:359 - Base de données: dwh/talentinsight.db

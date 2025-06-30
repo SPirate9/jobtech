@@ -1,0 +1,5 @@
+# Fichiers volumineux
+raw/stackoverflow_survey_2024.csv
+
+# Fichiers avec secrets
+.env
