@@ -45,7 +45,8 @@ pip install -r requirements.txt
 ### 2. Exécution du pipeline ETL
 ```bash
 python3.11 scripts/01_scrape.py
-python3.11 scripts/02_clean.py
+python3.11 scripts/feeder.py
+python3.11 scripts/02_clean_mongodb.py
 python3.11 scripts/03_load_dwh.py
 ```
 
