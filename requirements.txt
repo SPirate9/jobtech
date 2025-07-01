@@ -6,6 +6,7 @@ pytrends==4.9.2
 lxml>=4.9.0
 loguru==0.7.2
 pymongo>=4.0.0
+python-jobspy>=1.1.79
 
 Django==5.1
 djangorestframework==3.16.0
