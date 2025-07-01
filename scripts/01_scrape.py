@@ -90,7 +90,7 @@ def scrape_adzuna_api():
         logger.warning("Clés Adzuna manquantes dans .env")
         return
 
-    countries = ["fr", "de", "nl", "es", "it"]
+    countries = ["fr", "de", "nl", "es", "it", "gb", "us", "at", "au", "be", "br", "ca", "ch", "in", "mx", "nz", "pl", "sg", "za"]
     tech_queries = ["python developer", "javascript developer", "react developer"]
     adzuna_data = []
 

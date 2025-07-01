@@ -24,3 +24,30 @@
 2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: google_trends.json (14282 bytes)
 2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: adzuna_jobs.json (633846 bytes)
 2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: github_trends.json (266843 bytes)
+2025-07-01 14:36:17.380 | INFO     | __main__:main:241 - Démarrage collecte TalentInsight
+2025-07-01 14:36:17.380 | INFO     | __main__:scrape_adzuna_api:84 - Démarrage API Adzuna
+2025-07-01 14:38:56.565 | INFO     | __main__:scrape_adzuna_api:138 - Adzuna terminé: 2415 offres collectées
+2025-07-01 14:38:56.566 | INFO     | __main__:scrape_github_trends:143 - Démarrage GitHub API
+2025-07-01 14:39:20.991 | INFO     | __main__:scrape_github_trends:190 - GitHub terminé: 600 repos collectés
+2025-07-01 14:39:20.993 | INFO     | __main__:scrape_google_trends:29 - Démarrage Google Trends
+2025-07-01 14:39:21.113 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Python'
+2025-07-01 14:39:21.738 | ERROR    | __main__:scrape_google_trends:66 - Erreur Pytrends pour 'Python': The request failed: Google returned a response with code 429
+2025-07-01 14:39:21.738 | ERROR    | __main__:scrape_google_trends:68 - Rate limit atteint. Pause de 120s.
+2025-07-01 14:41:21.740 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'JavaScript'
+2025-07-01 14:41:22.062 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'JavaScript' collectée.
+2025-07-01 14:41:42.062 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'React'
+2025-07-01 14:41:42.721 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'React' collectée.
+2025-07-01 14:42:12.722 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Go'
+2025-07-01 14:42:13.423 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'Go' collectée.
+2025-07-01 14:42:36.427 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Rust'
+2025-07-01 14:42:36.688 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'Rust' collectée.
+2025-07-01 14:43:09.689 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Data Science'
+2025-07-01 14:43:09.998 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'Data Science' collectée.
+2025-07-01 14:43:40.000 | INFO     | __main__:scrape_google_trends:79 - Google Trends: 5 tendances collectées.
+2025-07-01 14:43:40.001 | INFO     | __main__:download_stackoverflow_survey:195 - Démarrage Stack Overflow Survey
+2025-07-01 14:43:42.277 | INFO     | __main__:download_stackoverflow_survey:230 - Stack Overflow: 159525875 bytes téléchargés
+2025-07-01 14:43:42.277 | INFO     | __main__:main:251 - Collecte terminée en 444.9s
+2025-07-01 14:43:42.277 | INFO     | __main__:main:257 - Fichier: adzuna_jobs.json (2124793 bytes)
+2025-07-01 14:43:42.278 | INFO     | __main__:main:257 - Fichier: github_trends.json (274801 bytes)
+2025-07-01 14:43:42.278 | INFO     | __main__:main:257 - Fichier: google_trends.json (12276 bytes)
+2025-07-01 14:43:42.278 | INFO     | __main__:main:257 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
