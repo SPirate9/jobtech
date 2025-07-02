@@ -242,6 +242,10 @@ def load_job_offers(conn):
             "Netherlands": "NL",
             "Spain": "ES",
             "Italy": "IT",
+            "Belgium": "BE",
+            "Switzerland": "CH",
+            "Austria":"AT",
+            "Poland": "PL"
         }.get(row["country_name"])
         id_country = country_map.get(country_code, 1)
         id_source = source_map.get("Adzuna", 1)
@@ -365,7 +369,7 @@ def load_stackoverflow_survey(conn):
     logger.info("Chargement enquête Stack Overflow")
 
     df = pd.read_csv(f"{CLEAN_DATA_DIR}/stackoverflow_survey_clean.csv")
-    country_map = {"Germany": 1, "France": 2, "Netherlands": 3, "Spain": 4, "Italy": 5}
+    country_map = {"Germany": 1, "France": 2, "Netherlands": 3, "Spain": 4, "Italy": 5, "Poland": 6, "Belgium":7, "Austria": 8, "Switzerland":9}
     source_map = (
         pd.read_sql("SELECT source_name, id_source FROM d_source", conn)
         .set_index("source_name")["id_source"]

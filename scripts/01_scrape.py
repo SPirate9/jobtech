@@ -91,7 +91,7 @@ def scrape_adzuna_api():
         logger.warning("Clés Adzuna manquantes dans .env")
         return
 
-    countries = ["fr", "de", "nl", "es", "it", "gb", "us", "at", "au", "be", "br", "ca", "ch", "in", "mx", "nz", "pl", "sg", "za"]
+    countries = ["fr", "de", "nl", "es", "it", "pl", "gb", "ch", "at", "be"]
     tech_queries = ["python developer", "javascript developer", "react developer"]
     adzuna_data = []
 
@@ -146,7 +146,7 @@ def scrape_github_trends():
     github_token = os.getenv("GITHUB_TOKEN")
     headers = {"Authorization": f"token {github_token}"} if github_token else {}
 
-    languages = ["Python", "JavaScript", "Go", "Rust", "TypeScript", "Java"]
+    languages = ["Rust","Python", "JavaScript", "Go", "TypeScript", "Java"]
     github_data = []
 
     for lang in languages:
@@ -243,12 +243,13 @@ def scrape_indeed_jobs():
     countries_config = {
         'France': {'country': 'France', 'location': 'Paris, France'},
         'Germany': {'country': 'Germany', 'location': 'Berlin, Germany'},
-        'UK': {'country': 'UK', 'location': 'London, UK'},
         'Italy': {'country': 'Italy', 'location': 'Milan, Italy'},
         'Spain': {'country': 'Spain', 'location': 'Madrid, Spain'},
         'Netherlands': {'country': 'Netherlands', 'location': 'Amsterdam, Netherlands'},
         'Belgium': {'country': 'Belgium', 'location': 'Brussels, Belgium'},
-        'Switzerland': {'country': 'Switzerland', 'location': 'Zurich, Switzerland'}
+        'Switzerland': {'country': 'Switzerland', 'location': 'Zurich, Switzerland'},
+        'Austria': {'country': 'Austria', 'location': 'Vienna, Austria'},
+        'Poland': {'country': 'Poland', 'location': 'Vienna, Warsaw'}
     }
     
     tech_keywords = [

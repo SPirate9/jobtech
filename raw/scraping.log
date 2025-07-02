@@ -1,138 +1,236 @@
-2025-06-30 19:53:39.270 | INFO     | __main__:main:222 - Démarrage collecte TalentInsight
-2025-06-30 19:53:39.271 | INFO     | __main__:scrape_adzuna_api:74 - Démarrage API Adzuna
-2025-06-30 19:54:18.546 | INFO     | __main__:scrape_adzuna_api:128 - Adzuna terminé: 727 offres collectées
-2025-06-30 19:54:18.548 | INFO     | __main__:scrape_github_trends:132 - Démarrage GitHub API
-2025-06-30 19:54:41.057 | INFO     | __main__:scrape_github_trends:179 - GitHub terminé: 600 repos collectés
-2025-06-30 19:54:41.059 | INFO     | __main__:scrape_google_trends:29 - Démarrage Google Trends
-2025-06-30 19:54:41.164 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Python'
-2025-06-30 19:54:42.009 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Python' collectée.
-2025-06-30 19:55:07.010 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'JavaScript'
-2025-06-30 19:55:07.327 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'JavaScript' collectée.
-2025-06-30 19:55:32.332 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'React'
-2025-06-30 19:55:32.706 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'React' collectée.
-2025-06-30 19:56:00.712 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Go'
-2025-06-30 19:56:01.201 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Go' collectée.
-2025-06-30 19:56:32.202 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Rust'
-2025-06-30 19:56:32.606 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Rust' collectée.
-2025-06-30 19:56:55.610 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Data Science'
-2025-06-30 19:56:55.945 | INFO     | __main__:scrape_google_trends:50 - Tendance pour 'Data Science' collectée.
-2025-06-30 19:57:30.949 | INFO     | __main__:scrape_google_trends:70 - Google Trends: 6 tendances collectées.
-2025-06-30 19:57:30.949 | INFO     | __main__:download_stackoverflow_survey:183 - Démarrage Stack Overflow Survey
-2025-06-30 19:57:35.955 | INFO     | __main__:download_stackoverflow_survey:214 - Stack Overflow: 159525875 bytes téléchargés
-2025-06-30 19:57:35.957 | INFO     | __main__:main:232 - Collecte terminée en 236.7s
-2025-06-30 19:57:35.957 | INFO     | __main__:main:238 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
-2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: google_trends.json (14282 bytes)
-2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: adzuna_jobs.json (633846 bytes)
-2025-06-30 19:57:35.958 | INFO     | __main__:main:238 - Fichier: github_trends.json (266843 bytes)
-2025-07-01 14:36:17.380 | INFO     | __main__:main:241 - Démarrage collecte TalentInsight
-2025-07-01 14:36:17.380 | INFO     | __main__:scrape_adzuna_api:84 - Démarrage API Adzuna
-2025-07-01 14:38:56.565 | INFO     | __main__:scrape_adzuna_api:138 - Adzuna terminé: 2415 offres collectées
-2025-07-01 14:38:56.566 | INFO     | __main__:scrape_github_trends:143 - Démarrage GitHub API
-2025-07-01 14:39:20.991 | INFO     | __main__:scrape_github_trends:190 - GitHub terminé: 600 repos collectés
-2025-07-01 14:39:20.993 | INFO     | __main__:scrape_google_trends:29 - Démarrage Google Trends
-2025-07-01 14:39:21.113 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Python'
-2025-07-01 14:39:21.738 | ERROR    | __main__:scrape_google_trends:66 - Erreur Pytrends pour 'Python': The request failed: Google returned a response with code 429
-2025-07-01 14:39:21.738 | ERROR    | __main__:scrape_google_trends:68 - Rate limit atteint. Pause de 120s.
-2025-07-01 14:41:21.740 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'JavaScript'
-2025-07-01 14:41:22.062 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'JavaScript' collectée.
-2025-07-01 14:41:42.062 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'React'
-2025-07-01 14:41:42.721 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'React' collectée.
-2025-07-01 14:42:12.722 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Go'
-2025-07-01 14:42:13.423 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'Go' collectée.
-2025-07-01 14:42:36.427 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Rust'
-2025-07-01 14:42:36.688 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'Rust' collectée.
-2025-07-01 14:43:09.689 | INFO     | __main__:scrape_google_trends:38 - Collecte de la tendance pour : 'Data Science'
-2025-07-01 14:43:09.998 | INFO     | __main__:scrape_google_trends:59 - Tendance pour 'Data Science' collectée.
-2025-07-01 14:43:40.000 | INFO     | __main__:scrape_google_trends:79 - Google Trends: 5 tendances collectées.
-2025-07-01 14:43:40.001 | INFO     | __main__:download_stackoverflow_survey:195 - Démarrage Stack Overflow Survey
-2025-07-01 14:43:42.277 | INFO     | __main__:download_stackoverflow_survey:230 - Stack Overflow: 159525875 bytes téléchargés
-2025-07-01 14:43:42.277 | INFO     | __main__:main:251 - Collecte terminée en 444.9s
-2025-07-01 14:43:42.277 | INFO     | __main__:main:257 - Fichier: adzuna_jobs.json (2124793 bytes)
-2025-07-01 14:43:42.278 | INFO     | __main__:main:257 - Fichier: github_trends.json (274801 bytes)
-2025-07-01 14:43:42.278 | INFO     | __main__:main:257 - Fichier: google_trends.json (12276 bytes)
-2025-07-01 14:43:42.278 | INFO     | __main__:main:257 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
-2025-07-01 21:31:36.736 | INFO     | __main__:scrape_adzuna_api:85 - Démarrage API Adzuna
-2025-07-01 21:34:00.341 | INFO     | __main__:scrape_adzuna_api:139 - Adzuna terminé: 2414 offres collectées
-2025-07-01 21:34:00.345 | INFO     | __main__:scrape_github_trends:144 - Démarrage GitHub API
-2025-07-01 21:34:22.957 | INFO     | __main__:scrape_github_trends:191 - GitHub terminé: 600 repos collectés
-2025-07-01 21:34:22.958 | INFO     | __main__:scrape_google_trends:30 - Démarrage Google Trends
-2025-07-01 21:34:23.094 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Python'
-2025-07-01 21:34:23.479 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Python' collectée.
-2025-07-01 21:34:48.482 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'JavaScript'
-2025-07-01 21:34:48.822 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'JavaScript' collectée.
-2025-07-01 21:35:17.828 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'React'
-2025-07-01 21:35:18.146 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'React' collectée.
-2025-07-01 21:35:38.152 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Go'
-2025-07-01 21:35:38.510 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Go' collectée.
-2025-07-01 21:36:08.517 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Rust'
-2025-07-01 21:36:08.901 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Rust' collectée.
-2025-07-01 21:36:43.908 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Data Science'
-2025-07-01 21:36:44.258 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Data Science' collectée.
-2025-07-01 21:37:06.268 | INFO     | __main__:scrape_google_trends:80 - Google Trends: 6 tendances collectées.
-2025-07-01 21:37:06.269 | INFO     | __main__:download_stackoverflow_survey:196 - Démarrage Stack Overflow Survey
-2025-07-01 21:37:13.981 | INFO     | __main__:download_stackoverflow_survey:231 - Stack Overflow: 159525875 bytes téléchargés
-2025-07-01 21:37:13.982 | INFO     | __main__:scrape_indeed_jobs:241 - Démarrage collecte Indeed Europe
-2025-07-01 21:37:13.982 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed France
-2025-07-01 21:37:14.680 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed France/"software engineer" python: 27 offres
-2025-07-01 21:37:18.782 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed France/"data scientist" machine learning: 29 offres
-2025-07-01 21:37:22.281 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed France/"devops engineer" cloud: 11 offres
-2025-07-01 21:37:25.695 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed France/"full stack developer" javascript: 1 offres
-2025-07-01 21:37:39.020 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed France/"data engineer" ETL: 15 offres
-2025-07-01 21:37:42.025 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed Germany
-2025-07-01 21:37:42.651 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"software engineer" python: 18 offres
-2025-07-01 21:37:46.076 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"data scientist" machine learning: 7 offres
-2025-07-01 21:37:49.535 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"devops engineer" cloud: 6 offres
-2025-07-01 21:37:52.911 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"full stack developer" javascript: 1 offres
-2025-07-01 21:37:56.460 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"backend developer" API: 1 offres
-2025-07-01 21:38:00.024 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"frontend developer" react: 2 offres
-2025-07-01 21:38:07.240 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Germany/"data engineer" ETL: 6 offres
-2025-07-01 21:38:10.246 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed UK
-2025-07-01 21:38:10.844 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"software engineer" python: 30 offres
-2025-07-01 21:38:15.158 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"data scientist" machine learning: 30 offres
-2025-07-01 21:38:18.747 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"devops engineer" cloud: 11 offres
-2025-07-01 21:38:22.328 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"full stack developer" javascript: 4 offres
-2025-07-01 21:38:26.164 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"backend developer" API: 3 offres
-2025-07-01 21:38:32.833 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"mobile developer" android ios: 1 offres
-2025-07-01 21:38:36.868 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed UK/"data engineer" ETL: 26 offres
-2025-07-01 21:38:39.874 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed Italy
-2025-07-01 21:38:40.402 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Italy/"software engineer" python: 7 offres
-2025-07-01 21:38:43.850 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Italy/"data scientist" machine learning: 2 offres
-2025-07-01 21:38:50.416 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Italy/"full stack developer" javascript: 1 offres
-2025-07-01 21:38:54.178 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Italy/"backend developer" API: 2 offres
-2025-07-01 21:39:00.846 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Italy/"mobile developer" android ios: 1 offres
-2025-07-01 21:39:04.279 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Italy/"data engineer" ETL: 3 offres
-2025-07-01 21:39:07.280 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed Spain
-2025-07-01 21:39:07.843 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"software engineer" python: 8 offres
-2025-07-01 21:39:11.648 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"data scientist" machine learning: 10 offres
-2025-07-01 21:39:15.103 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"devops engineer" cloud: 5 offres
-2025-07-01 21:39:18.533 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"full stack developer" javascript: 2 offres
-2025-07-01 21:39:22.075 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"backend developer" API: 2 offres
-2025-07-01 21:39:25.683 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"frontend developer" react: 4 offres
-2025-07-01 21:39:32.592 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Spain/"data engineer" ETL: 7 offres
-2025-07-01 21:39:35.598 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed Netherlands
-2025-07-01 21:39:36.200 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"software engineer" python: 21 offres
-2025-07-01 21:39:39.921 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"data scientist" machine learning: 21 offres
-2025-07-01 21:39:43.612 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"devops engineer" cloud: 14 offres
-2025-07-01 21:39:47.090 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"full stack developer" javascript: 1 offres
-2025-07-01 21:39:50.716 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"backend developer" API: 6 offres
-2025-07-01 21:39:54.131 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"frontend developer" react: 2 offres
-2025-07-01 21:40:01.114 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Netherlands/"data engineer" ETL: 7 offres
-2025-07-01 21:40:04.117 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed Belgium
-2025-07-01 21:40:04.705 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"software engineer" python: 9 offres
-2025-07-01 21:40:08.147 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"data scientist" machine learning: 5 offres
-2025-07-01 21:40:11.671 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"devops engineer" cloud: 3 offres
-2025-07-01 21:40:15.439 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"full stack developer" javascript: 4 offres
-2025-07-01 21:40:18.840 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"backend developer" API: 2 offres
-2025-07-01 21:40:22.322 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"frontend developer" react: 1 offres
-2025-07-01 21:40:29.166 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Belgium/"data engineer" ETL: 6 offres
-2025-07-01 21:40:32.171 | INFO     | __main__:scrape_indeed_jobs:268 - Collecte Indeed Switzerland
-2025-07-01 21:40:32.985 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Switzerland/"software engineer" python: 6 offres
-2025-07-01 21:40:36.407 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Switzerland/"data scientist" machine learning: 4 offres
-2025-07-01 21:40:56.016 | INFO     | __main__:scrape_indeed_jobs:290 - Indeed Switzerland/"data engineer" ETL: 3 offres
-2025-07-01 21:40:59.173 | INFO     | __main__:scrape_indeed_jobs:305 - Indeed terminé: 362 offres collectées
-2025-07-01 21:40:59.176 | INFO     | __main__:main:323 - Collecte terminée en 562.4s
-2025-07-01 21:40:59.177 | INFO     | __main__:main:329 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
-2025-07-01 21:40:59.177 | INFO     | __main__:main:329 - Fichier: google_trends.json (14136 bytes)
-2025-07-01 21:40:59.177 | INFO     | __main__:main:329 - Fichier: adzuna_jobs.json (2094656 bytes)
-2025-07-01 21:40:59.177 | INFO     | __main__:main:329 - Fichier: indeed_jobs.json (2402386 bytes)
-2025-07-01 21:40:59.177 | INFO     | __main__:main:329 - Fichier: github_trends.json (266986 bytes)
+2025-07-02 10:59:50.681 | INFO     | __main__:scrape_google_trends:80 - Google Trends: 5 tendances collectées.
+2025-07-02 10:59:50.697 | INFO     | __main__:download_stackoverflow_survey:196 - Démarrage Stack Overflow Survey
+2025-07-02 10:59:58.104 | ERROR    | __main__:download_stackoverflow_survey:236 - Erreur Stack Overflow: [WinError 183] Impossible de créer un fichier déjà existant: 'raw\\survey_results_public.csv' -> 'raw/stackoverflow_survey_2024.csv'
+2025-07-02 10:59:58.106 | INFO     | __main__:scrape_indeed_jobs:241 - Démarrage collecte Indeed Europe
+2025-07-02 10:59:58.106 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed France
+2025-07-02 10:59:58.591 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed France/"software engineer" python: 30 offres
+2025-07-02 11:00:02.159 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed France/"data scientist" machine learning: 30 offres
+2025-07-02 11:00:06.266 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed France/"devops engineer" cloud: 13 offres
+2025-07-02 11:00:09.740 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed France/"full stack developer" javascript: 1 offres
+2025-07-02 11:00:13.275 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed France/"backend developer" API: 1 offres
+2025-07-02 11:00:23.467 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed France/"data engineer" ETL: 18 offres
+2025-07-02 11:00:26.468 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Germany
+2025-07-02 11:00:27.208 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Germany/"software engineer" python: 16 offres
+2025-07-02 11:00:31.106 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Germany/"data scientist" machine learning: 7 offres
+2025-07-02 11:00:34.940 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Germany/"devops engineer" cloud: 6 offres
+2025-07-02 11:00:38.919 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Germany/"full stack developer" javascript: 1 offres
+2025-07-02 11:00:45.853 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Germany/"frontend developer" react: 2 offres
+2025-07-02 11:00:52.689 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Germany/"data engineer" ETL: 5 offres
+2025-07-02 11:00:55.690 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed UK
+2025-07-02 11:00:56.338 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"software engineer" python: 30 offres
+2025-07-02 11:00:59.850 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"data scientist" machine learning: 30 offres
+2025-07-02 11:01:03.568 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"devops engineer" cloud: 12 offres
+2025-07-02 11:01:07.241 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"full stack developer" javascript: 4 offres
+2025-07-02 11:01:10.907 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"backend developer" API: 1 offres
+2025-07-02 11:01:17.733 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"mobile developer" android ios: 2 offres
+2025-07-02 11:01:21.600 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed UK/"data engineer" ETL: 20 offres
+2025-07-02 11:01:24.602 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Italy
+2025-07-02 11:01:25.237 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Italy/"software engineer" python: 7 offres
+2025-07-02 11:01:28.660 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Italy/"data scientist" machine learning: 7 offres
+2025-07-02 11:01:35.505 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Italy/"full stack developer" javascript: 1 offres
+2025-07-02 11:01:39.119 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Italy/"backend developer" API: 2 offres
+2025-07-02 11:01:46.242 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Italy/"mobile developer" android ios: 1 offres
+2025-07-02 11:01:49.978 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Italy/"data engineer" ETL: 3 offres
+2025-07-02 11:01:52.979 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Spain
+2025-07-02 11:01:53.559 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Spain/"software engineer" python: 8 offres
+2025-07-02 11:01:57.250 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Spain/"data scientist" machine learning: 12 offres
+2025-07-02 11:02:00.757 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Spain/"devops engineer" cloud: 5 offres
+2025-07-02 11:02:07.507 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Spain/"backend developer" API: 2 offres
+2025-07-02 11:02:10.983 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Spain/"frontend developer" react: 3 offres
+2025-07-02 11:02:17.747 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Spain/"data engineer" ETL: 6 offres
+2025-07-02 11:02:20.749 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Netherlands
+2025-07-02 11:02:21.673 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"software engineer" python: 22 offres
+2025-07-02 11:02:25.458 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"data scientist" machine learning: 20 offres
+2025-07-02 11:02:29.603 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"devops engineer" cloud: 12 offres
+2025-07-02 11:02:33.067 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"full stack developer" javascript: 1 offres
+2025-07-02 11:02:37.019 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"backend developer" API: 4 offres
+2025-07-02 11:02:40.475 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"frontend developer" react: 1 offres
+2025-07-02 11:02:48.019 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Netherlands/"data engineer" ETL: 5 offres
+2025-07-02 11:02:51.020 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Belgium
+2025-07-02 11:02:51.654 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Belgium/"software engineer" python: 9 offres
+2025-07-02 11:02:55.411 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Belgium/"data scientist" machine learning: 6 offres
+2025-07-02 11:02:58.983 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Belgium/"devops engineer" cloud: 3 offres
+2025-07-02 11:03:02.450 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Belgium/"full stack developer" javascript: 3 offres
+2025-07-02 11:03:06.062 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Belgium/"backend developer" API: 2 offres
+2025-07-02 11:03:16.142 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Belgium/"data engineer" ETL: 6 offres
+2025-07-02 11:03:19.142 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Switzerland
+2025-07-02 11:03:19.973 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Switzerland/"software engineer" python: 6 offres
+2025-07-02 11:03:23.480 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Switzerland/"data scientist" machine learning: 4 offres
+2025-07-02 11:03:43.698 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Switzerland/"data engineer" ETL: 3 offres
+2025-07-02 11:03:46.699 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Austria
+2025-07-02 11:03:47.301 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Austria/"software engineer" python: 5 offres
+2025-07-02 11:03:53.997 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Austria/"devops engineer" cloud: 3 offres
+2025-07-02 11:04:11.019 | INFO     | __main__:scrape_indeed_jobs:292 - Indeed Austria/"data engineer" ETL: 1 offres
+2025-07-02 11:04:14.021 | INFO     | __main__:scrape_indeed_jobs:270 - Collecte Indeed Poland
+2025-07-02 11:04:43.246 | INFO     | __main__:scrape_indeed_jobs:307 - Indeed terminé: 369 offres collectées
+2025-07-02 11:04:43.248 | INFO     | __main__:main:325 - Collecte terminée en 651.5s
+2025-07-02 11:04:43.249 | INFO     | __main__:main:331 - Fichier: adzuna_jobs.json (1032930 bytes)
+2025-07-02 11:04:43.250 | INFO     | __main__:main:331 - Fichier: github_trends.json (275149 bytes)
+2025-07-02 11:04:43.250 | INFO     | __main__:main:331 - Fichier: google_trends.json (12278 bytes)
+2025-07-02 11:04:43.251 | INFO     | __main__:main:331 - Fichier: indeed_jobs.json (2461423 bytes)
+2025-07-02 11:04:43.252 | INFO     | __main__:main:331 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
+2025-07-02 11:04:43.252 | INFO     | __main__:main:331 - Fichier: survey_results_public.csv (159525875 bytes)
+2025-07-02 11:55:57.777 | INFO     | __main__:scrape_adzuna_api:85 - Démarrage API Adzuna
+2025-07-02 11:57:14.906 | INFO     | __main__:scrape_adzuna_api:139 - Adzuna terminé: 1165 offres collectées
+2025-07-02 11:57:14.909 | INFO     | __main__:scrape_github_trends:144 - Démarrage GitHub API
+2025-07-02 11:57:38.261 | INFO     | __main__:scrape_github_trends:191 - GitHub terminé: 600 repos collectés
+2025-07-02 11:57:38.263 | INFO     | __main__:scrape_google_trends:30 - Démarrage Google Trends
+2025-07-02 11:57:38.414 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Python'
+2025-07-02 11:57:38.975 | ERROR    | __main__:scrape_google_trends:67 - Erreur Pytrends pour 'Python': The request failed: Google returned a response with code 429
+2025-07-02 11:57:38.975 | ERROR    | __main__:scrape_google_trends:69 - Rate limit atteint. Pause de 120s.
+2025-07-02 11:59:38.977 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'JavaScript'
+2025-07-02 11:59:39.362 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'JavaScript' collectée.
+2025-07-02 12:00:05.363 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'React'
+2025-07-02 12:00:05.808 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'React' collectée.
+2025-07-02 12:00:26.809 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Go'
+2025-07-02 12:00:27.232 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Go' collectée.
+2025-07-02 12:00:53.233 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Rust'
+2025-07-02 12:00:53.859 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Rust' collectée.
+2025-07-02 12:01:21.860 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Data Science'
+2025-07-02 12:01:22.330 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Data Science' collectée.
+2025-07-02 12:01:52.358 | INFO     | __main__:scrape_google_trends:80 - Google Trends: 5 tendances collectées.
+2025-07-02 12:01:52.359 | INFO     | __main__:download_stackoverflow_survey:196 - Démarrage Stack Overflow Survey
+2025-07-02 12:02:10.920 | ERROR    | __main__:download_stackoverflow_survey:236 - Erreur Stack Overflow: [WinError 183] Impossible de créer un fichier déjà existant: 'raw\\survey_results_public.csv' -> 'raw/stackoverflow_survey_2024.csv'
+2025-07-02 12:02:10.921 | INFO     | __main__:scrape_indeed_jobs:241 - Démarrage collecte Indeed Europe
+2025-07-02 12:02:10.921 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed France
+2025-07-02 12:02:11.657 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"software engineer" python: 30 offres
+2025-07-02 12:02:15.131 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"data scientist" machine learning: 30 offres
+2025-07-02 12:02:18.810 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"devops engineer" cloud: 13 offres
+2025-07-02 12:02:22.396 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"full stack developer" javascript: 1 offres
+2025-07-02 12:02:25.854 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"backend developer" API: 1 offres
+2025-07-02 12:02:36.349 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"data engineer" ETL: 18 offres
+2025-07-02 12:02:39.350 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Germany
+2025-07-02 12:02:40.620 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"software engineer" python: 16 offres
+2025-07-02 12:02:44.187 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"data scientist" machine learning: 7 offres
+2025-07-02 12:02:47.786 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"devops engineer" cloud: 6 offres
+2025-07-02 12:02:51.408 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"full stack developer" javascript: 1 offres
+2025-07-02 12:02:58.192 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"frontend developer" react: 2 offres
+2025-07-02 12:03:05.058 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"data engineer" ETL: 5 offres
+2025-07-02 12:03:08.060 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Italy
+2025-07-02 12:03:08.812 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"software engineer" python: 7 offres
+2025-07-02 12:03:12.418 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"data scientist" machine learning: 7 offres
+2025-07-02 12:03:19.592 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"full stack developer" javascript: 1 offres
+2025-07-02 12:03:23.192 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"backend developer" API: 2 offres
+2025-07-02 12:03:30.436 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"mobile developer" android ios: 1 offres
+2025-07-02 12:03:33.912 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"data engineer" ETL: 4 offres
+2025-07-02 12:03:36.913 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Spain
+2025-07-02 12:03:37.681 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"software engineer" python: 8 offres
+2025-07-02 12:03:41.384 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"data scientist" machine learning: 13 offres
+2025-07-02 12:03:44.984 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"devops engineer" cloud: 5 offres
+2025-07-02 12:03:51.778 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"backend developer" API: 2 offres
+2025-07-02 12:03:55.369 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"frontend developer" react: 3 offres
+2025-07-02 12:04:02.324 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"data engineer" ETL: 6 offres
+2025-07-02 12:04:05.324 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Netherlands
+2025-07-02 12:04:07.194 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"software engineer" python: 22 offres
+2025-07-02 12:04:10.982 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"data scientist" machine learning: 20 offres
+2025-07-02 12:04:14.627 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"devops engineer" cloud: 14 offres
+2025-07-02 12:04:18.742 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"full stack developer" javascript: 1 offres
+2025-07-02 12:04:22.637 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"backend developer" API: 4 offres
+2025-07-02 12:04:26.244 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"frontend developer" react: 1 offres
+2025-07-02 12:04:33.226 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"data engineer" ETL: 5 offres
+2025-07-02 12:04:36.227 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Belgium
+2025-07-02 12:04:37.367 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"software engineer" python: 9 offres
+2025-07-02 12:04:40.915 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"data scientist" machine learning: 4 offres
+2025-07-02 12:04:44.799 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"devops engineer" cloud: 3 offres
+2025-07-02 12:04:48.443 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"full stack developer" javascript: 3 offres
+2025-07-02 12:04:51.997 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"backend developer" API: 2 offres
+2025-07-02 12:05:02.312 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"data engineer" ETL: 5 offres
+2025-07-02 12:05:05.313 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Switzerland
+2025-07-02 12:05:06.031 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Switzerland/"software engineer" python: 6 offres
+2025-07-02 12:05:09.579 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Switzerland/"data scientist" machine learning: 4 offres
+2025-07-02 12:05:29.711 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Switzerland/"data engineer" ETL: 3 offres
+2025-07-02 12:05:32.712 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Austria
+2025-07-02 12:05:33.265 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Austria/"software engineer" python: 5 offres
+2025-07-02 12:05:40.058 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Austria/"devops engineer" cloud: 2 offres
+2025-07-02 12:05:56.715 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Austria/"data engineer" ETL: 1 offres
+2025-07-02 12:05:59.716 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Poland
+2025-07-02 12:06:27.590 | INFO     | __main__:scrape_indeed_jobs:306 - Indeed terminé: 277 offres collectées
+2025-07-02 12:06:27.593 | INFO     | __main__:main:324 - Collecte terminée en 629.8s
+2025-07-02 12:06:27.594 | INFO     | __main__:main:330 - Fichier: adzuna_jobs.json (1031125 bytes)
+2025-07-02 12:06:27.595 | INFO     | __main__:main:330 - Fichier: github_trends.json (275149 bytes)
+2025-07-02 12:06:27.596 | INFO     | __main__:main:330 - Fichier: google_trends.json (12277 bytes)
+2025-07-02 12:06:27.596 | INFO     | __main__:main:330 - Fichier: indeed_jobs.json (1748391 bytes)
+2025-07-02 12:06:27.597 | INFO     | __main__:main:330 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
+2025-07-02 12:06:27.598 | INFO     | __main__:main:330 - Fichier: survey_results_public.csv (159525875 bytes)
+2025-07-02 12:09:08.074 | INFO     | __main__:scrape_adzuna_api:85 - Démarrage API Adzuna
+2025-07-02 12:09:44.031 | INFO     | __main__:scrape_adzuna_api:85 - Démarrage API Adzuna
+2025-07-02 12:11:07.559 | INFO     | __main__:scrape_adzuna_api:139 - Adzuna terminé: 1165 offres collectées
+2025-07-02 12:11:07.562 | INFO     | __main__:scrape_github_trends:144 - Démarrage GitHub API
+2025-07-02 12:11:31.619 | INFO     | __main__:scrape_github_trends:191 - GitHub terminé: 600 repos collectés
+2025-07-02 12:11:31.622 | INFO     | __main__:scrape_google_trends:30 - Démarrage Google Trends
+2025-07-02 12:11:31.799 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Python'
+2025-07-02 12:11:32.161 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Python' collectée.
+2025-07-02 12:11:54.162 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'JavaScript'
+2025-07-02 12:11:54.544 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'JavaScript' collectée.
+2025-07-02 12:12:21.545 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'React'
+2025-07-02 12:12:21.951 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'React' collectée.
+2025-07-02 12:12:54.952 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Go'
+2025-07-02 12:12:55.326 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Go' collectée.
+2025-07-02 12:13:27.328 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Rust'
+2025-07-02 12:13:27.790 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Rust' collectée.
+2025-07-02 12:13:50.792 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Data Science'
+2025-07-02 12:13:51.568 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Data Science' collectée.
+2025-07-02 12:14:19.606 | INFO     | __main__:scrape_google_trends:80 - Google Trends: 6 tendances collectées.
+2025-07-02 12:14:19.607 | INFO     | __main__:download_stackoverflow_survey:196 - Démarrage Stack Overflow Survey
+2025-07-02 12:14:33.109 | ERROR    | __main__:download_stackoverflow_survey:236 - Erreur Stack Overflow: [WinError 183] Impossible de créer un fichier déjà existant: 'raw\\survey_results_public.csv' -> 'raw/stackoverflow_survey_2024.csv'
+2025-07-02 12:14:33.110 | INFO     | __main__:scrape_indeed_jobs:241 - Démarrage collecte Indeed Europe
+2025-07-02 12:14:33.111 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed France
+2025-07-02 12:14:33.745 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"software engineer" python: 30 offres
+2025-07-02 12:14:37.256 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"data scientist" machine learning: 30 offres
+2025-07-02 12:14:41.133 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"devops engineer" cloud: 13 offres
+2025-07-02 12:14:44.943 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"full stack developer" javascript: 1 offres
+2025-07-02 12:14:48.363 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"backend developer" API: 1 offres
+2025-07-02 12:14:58.643 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed France/"data engineer" ETL: 18 offres
+2025-07-02 12:15:01.644 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Germany
+2025-07-02 12:15:02.317 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"software engineer" python: 16 offres
+2025-07-02 12:15:05.855 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"data scientist" machine learning: 7 offres
+2025-07-02 12:15:09.484 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"devops engineer" cloud: 6 offres
+2025-07-02 12:15:13.012 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"full stack developer" javascript: 1 offres
+2025-07-02 12:15:20.191 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"frontend developer" react: 2 offres
+2025-07-02 12:15:27.112 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Germany/"data engineer" ETL: 5 offres
+2025-07-02 12:15:30.113 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Italy
+2025-07-02 12:15:30.591 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"software engineer" python: 7 offres
+2025-07-02 12:15:34.128 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"data scientist" machine learning: 7 offres
+2025-07-02 12:15:40.781 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"full stack developer" javascript: 1 offres
+2025-07-02 12:15:44.439 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"backend developer" API: 2 offres
+2025-07-02 12:15:51.253 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"mobile developer" android ios: 1 offres
+2025-07-02 12:15:54.726 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Italy/"data engineer" ETL: 4 offres
+2025-07-02 12:15:57.728 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Spain
+2025-07-02 12:15:58.461 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"software engineer" python: 8 offres
+2025-07-02 12:16:02.139 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"data scientist" machine learning: 14 offres
+2025-07-02 12:16:05.573 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"devops engineer" cloud: 5 offres
+2025-07-02 12:16:12.279 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"backend developer" API: 2 offres
+2025-07-02 12:16:15.821 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"frontend developer" react: 3 offres
+2025-07-02 12:16:22.609 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Spain/"data engineer" ETL: 6 offres
+2025-07-02 12:16:25.611 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Netherlands
+2025-07-02 12:16:26.530 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"software engineer" python: 22 offres
+2025-07-02 12:16:30.267 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"data scientist" machine learning: 21 offres
+2025-07-02 12:16:33.821 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"devops engineer" cloud: 14 offres
+2025-07-02 12:16:37.389 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"full stack developer" javascript: 1 offres
+2025-07-02 12:16:41.027 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"backend developer" API: 4 offres
+2025-07-02 12:16:44.543 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"frontend developer" react: 1 offres
+2025-07-02 12:16:51.531 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Netherlands/"data engineer" ETL: 5 offres
+2025-07-02 12:16:54.533 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Belgium
+2025-07-02 12:16:55.100 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"software engineer" python: 9 offres
+2025-07-02 12:16:58.713 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"data scientist" machine learning: 5 offres
+2025-07-02 12:17:02.191 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"devops engineer" cloud: 3 offres
+2025-07-02 12:17:05.749 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"full stack developer" javascript: 3 offres
+2025-07-02 12:17:09.222 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"backend developer" API: 2 offres
+2025-07-02 12:17:19.400 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Belgium/"data engineer" ETL: 6 offres
+2025-07-02 12:17:22.401 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Switzerland
+2025-07-02 12:17:23.011 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Switzerland/"software engineer" python: 6 offres
+2025-07-02 12:17:26.548 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Switzerland/"data scientist" machine learning: 4 offres
+2025-07-02 12:17:46.892 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Switzerland/"data engineer" ETL: 3 offres
+2025-07-02 12:17:49.893 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Austria
+2025-07-02 12:17:50.342 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Austria/"software engineer" python: 5 offres
+2025-07-02 12:17:57.162 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Austria/"devops engineer" cloud: 2 offres
+2025-07-02 12:18:13.662 | INFO     | __main__:scrape_indeed_jobs:291 - Indeed Austria/"data engineer" ETL: 1 offres
+2025-07-02 12:18:16.663 | INFO     | __main__:scrape_indeed_jobs:269 - Collecte Indeed Poland
+2025-07-02 12:18:45.630 | INFO     | __main__:scrape_indeed_jobs:306 - Indeed terminé: 281 offres collectées
+2025-07-02 12:18:45.633 | INFO     | __main__:main:324 - Collecte terminée en 541.6s
+2025-07-02 12:18:45.634 | INFO     | __main__:main:330 - Fichier: adzuna_jobs.json (1031143 bytes)
+2025-07-02 12:18:45.635 | INFO     | __main__:main:330 - Fichier: github_trends.json (275149 bytes)
+2025-07-02 12:18:45.636 | INFO     | __main__:main:330 - Fichier: google_trends.json (14732 bytes)
+2025-07-02 12:18:45.636 | INFO     | __main__:main:330 - Fichier: indeed_jobs.json (1769643 bytes)
+2025-07-02 12:18:45.637 | INFO     | __main__:main:330 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
+2025-07-02 12:18:45.637 | INFO     | __main__:main:330 - Fichier: survey_results_public.csv (159525875 bytes)

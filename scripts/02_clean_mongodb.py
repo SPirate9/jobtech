@@ -34,8 +34,15 @@ def clean_adzuna_jobs():
     df.drop(columns=["_id"], inplace=True, errors="ignore")
 
     country_mapping = {
-        "fr": "France", "de": "Germany", "nl": "Netherlands",
-        "es": "Spain", "it": "Italy"
+        "fr": "France",
+        "de": "Germany",
+        "nl": "Netherlands",
+        "es": "Spain",
+        "it": "Italy",
+        "at": "Austria",
+        "be": "Belgium",
+        "ch": "Switzerland",
+        "pl": "Poland",
     }
     df["country_name"] = df["country"].map(country_mapping)
 
@@ -120,7 +127,7 @@ def clean_stackoverflow_survey():
     ]
     df = df[[col for col in useful_cols if col in df.columns]]
 
-    eu_countries = ["Germany", "France", "Netherlands", "Spain", "Italy", "Poland"]
+    eu_countries = ["Germany", "France", "Netherlands", "Spain", "Italy", "Poland","Switzerland","Austria","Belgium"]
     df = df[df["Country"].isin(eu_countries)]
 
     if "CompTotal" in df.columns:
@@ -139,11 +146,15 @@ def create_dimension_tables():
     logger.info("Création des tables de dimensions")
 
     countries_data = [
-        {"iso2": "FR", "country_name": "France", "region": "Western Europe", "currency": "EUR"},
-        {"iso2": "DE", "country_name": "Germany", "region": "Western Europe", "currency": "EUR"},
-        {"iso2": "NL", "country_name": "Netherlands", "region": "Western Europe", "currency": "EUR"},
-        {"iso2": "ES", "country_name": "Spain", "region": "Southern Europe", "currency": "EUR"},
-        {"iso2": "IT", "country_name": "Italy", "region": "Southern Europe", "currency": "EUR"},
+            {"iso2": "FR", "country_name": "France", "region": "Western Europe", "currency": "EUR"},
+            {"iso2": "DE", "country_name": "Germany", "region": "Western Europe", "currency": "EUR"},
+            {"iso2": "NL", "country_name": "Netherlands", "region": "Western Europe", "currency": "EUR"},
+            {"iso2": "ES", "country_name": "Spain", "region": "Southern Europe", "currency": "EUR"},
+            {"iso2": "IT", "country_name": "Italy", "region": "Southern Europe", "currency": "EUR"},
+            {"iso2": "AT", "country_name": "Austria", "region": "Central Europe", "currency": "EUR"},
+            {"iso2": "BE", "country_name": "Belgium", "region": "Western Europe", "currency": "EUR"},
+            {"iso2": "CH", "country_name": "Switzerland", "region": "Western Europe", "currency": "EUR"},
+            {"iso2": "PL", "country_name": "Poland", "region": "Eastern Europe", "currency": "EUR"}
     ]
     pd.DataFrame(countries_data).to_csv(f"{CLEAN_DATA_DIR}/dim_countries.csv", index=False)
 
@@ -165,10 +176,12 @@ def create_dimension_tables():
         {"source_name": "GitHub"},
         {"source_name": "Google Trends"},
         {"source_name": "Stack Overflow"},
+        {"source_name": "Indeed"}
     ]
     pd.DataFrame(sources_data).to_csv(f"{CLEAN_DATA_DIR}/dim_sources.csv", index=False)
 
     logger.info("Tables de dimensions créées")
+
 
 
 def main():
