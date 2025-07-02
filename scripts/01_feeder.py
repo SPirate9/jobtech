@@ -3,8 +3,11 @@ import json
 import pandas as pd
 import hashlib
 from pymongo import MongoClient
+from dotenv import load_dotenv
 
-uri = "mongodb+srv://noamboulze:noamboulze@efrei.q2kyc.mongodb.net/jobtech?retryWrites=true&w=majority"
+load_dotenv()
+
+uri = os.getenv("MONGO_URI")
 client = MongoClient(uri, serverSelectionTimeoutMS=5000)
 db = client['jobtech']
 

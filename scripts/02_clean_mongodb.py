@@ -3,7 +3,8 @@ import pandas as pd
 from datetime import datetime
 from loguru import logger
 from pymongo import MongoClient
-
+from dotenv import load_dotenv
+load_dotenv()
 # Répertoires
 CLEAN_DATA_DIR = "datasets_clean"
 os.makedirs(CLEAN_DATA_DIR, exist_ok=True)
@@ -12,9 +13,14 @@ os.makedirs(CLEAN_DATA_DIR, exist_ok=True)
 logger.remove()
 logger.add(f"{CLEAN_DATA_DIR}/cleaning.log", level="INFO", rotation="1 day")
 
-# Connexion MongoDB
+# Connexion MongoDB via variable d'environnement
+load_dotenv()
+uri = os.getenv("MONGO_URI")
+if not uri:
+    logger.error("La variable d'environnement MONGO_URI est manquante.")
+    exit(1)
 try:
-    client = MongoClient("mongodb+srv://noamboulze:noamboulze@efrei.q2kyc.mongodb.net/jobtech?retryWrites=true&w=majority")
+    client = MongoClient(uri)
     db = client["jobtech"]
     client.server_info()
     logger.info("Connexion MongoDB réussie.")
