@@ -17,3 +17,41 @@
 2025-06-30 20:06:15.625 | INFO     | __main__:main:231 - Fichier nettoyé: google_trends_clean.csv (27111 bytes)
 2025-06-30 20:06:15.626 | INFO     | __main__:main:231 - Fichier nettoyé: stackoverflow_survey_clean.csv (1846485 bytes)
 2025-06-30 20:06:15.626 | INFO     | __main__:main:231 - Fichier nettoyé: github_trends_clean.csv (148740 bytes)
+2025-07-01 14:46:00.636 | INFO     | __main__:main:378 - Démarrage nettoyage TalentInsight
+2025-07-01 14:46:00.637 | INFO     | __main__:clean_adzuna_jobs:23 - Nettoyage des données Adzuna
+2025-07-01 14:46:00.720 | INFO     | __main__:clean_adzuna_jobs:85 - Adzuna nettoyé: 2415 offres
+2025-07-01 14:46:00.722 | INFO     | __main__:clean_github_trends:90 - Nettoyage des données GitHub
+2025-07-01 14:46:00.740 | INFO     | __main__:clean_github_trends:113 - GitHub nettoyé: 600 repos
+2025-07-01 14:46:00.740 | INFO     | __main__:clean_google_trends:118 - Nettoyage des données Google Trends
+2025-07-01 14:46:00.745 | INFO     | __main__:clean_google_trends:144 - Google Trends nettoyé: 460 points de données
+2025-07-01 14:46:00.746 | INFO     | __main__:clean_stackoverflow_survey:149 - Nettoyage des données Stack Overflow
+2025-07-01 14:46:02.817 | INFO     | __main__:clean_stackoverflow_survey:211 - Stack Overflow nettoyé: 8712 réponses
+2025-07-01 14:46:02.821 | INFO     | __main__:create_dimension_tables:218 - Création des tables de dimensions
+2025-07-01 14:46:02.825 | INFO     | __main__:create_dimension_tables:372 - Tables de dimensions créées
+2025-07-01 14:46:02.825 | INFO     | __main__:main:389 - Nettoyage terminé en 2.2s
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: adzuna_jobs_clean.csv (1654971 bytes)
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: dim_countries.csv (603 bytes)
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: dim_skills.csv (252 bytes)
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: dim_sources.csv (60 bytes)
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: github_trends_clean.csv (149725 bytes)
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: google_trends_clean.csv (22861 bytes)
+2025-07-01 14:46:02.826 | INFO     | __main__:main:396 - Fichier nettoyé: stackoverflow_survey_clean.csv (2198656 bytes)
+2025-07-01 14:51:24.679 | INFO     | __main__:main:378 - Démarrage nettoyage TalentInsight
+2025-07-01 14:51:24.680 | INFO     | __main__:clean_adzuna_jobs:23 - Nettoyage des données Adzuna
+2025-07-01 14:51:24.753 | INFO     | __main__:clean_adzuna_jobs:85 - Adzuna nettoyé: 2415 offres
+2025-07-01 14:51:24.754 | INFO     | __main__:clean_github_trends:90 - Nettoyage des données GitHub
+2025-07-01 14:51:24.773 | INFO     | __main__:clean_github_trends:113 - GitHub nettoyé: 600 repos
+2025-07-01 14:51:24.773 | INFO     | __main__:clean_google_trends:118 - Nettoyage des données Google Trends
+2025-07-01 14:51:24.779 | INFO     | __main__:clean_google_trends:144 - Google Trends nettoyé: 558 points de données
+2025-07-01 14:51:24.779 | INFO     | __main__:clean_stackoverflow_survey:149 - Nettoyage des données Stack Overflow
+2025-07-01 14:51:26.763 | INFO     | __main__:clean_stackoverflow_survey:211 - Stack Overflow nettoyé: 8712 réponses
+2025-07-01 14:51:26.767 | INFO     | __main__:create_dimension_tables:218 - Création des tables de dimensions
+2025-07-01 14:51:26.771 | INFO     | __main__:create_dimension_tables:372 - Tables de dimensions créées
+2025-07-01 14:51:26.772 | INFO     | __main__:main:389 - Nettoyage terminé en 2.1s
+2025-07-01 14:51:26.772 | INFO     | __main__:main:396 - Fichier nettoyé: adzuna_jobs_clean.csv (1654971 bytes)
+2025-07-01 14:51:26.772 | INFO     | __main__:main:396 - Fichier nettoyé: dim_countries.csv (603 bytes)
+2025-07-01 14:51:26.772 | INFO     | __main__:main:396 - Fichier nettoyé: dim_skills.csv (252 bytes)
+2025-07-01 14:51:26.773 | INFO     | __main__:main:396 - Fichier nettoyé: dim_sources.csv (60 bytes)
+2025-07-01 14:51:26.773 | INFO     | __main__:main:396 - Fichier nettoyé: github_trends_clean.csv (149725 bytes)
+2025-07-01 14:51:26.773 | INFO     | __main__:main:396 - Fichier nettoyé: google_trends_clean.csv (27670 bytes)
+2025-07-01 14:51:26.773 | INFO     | __main__:main:396 - Fichier nettoyé: stackoverflow_survey_clean.csv (2198656 bytes)

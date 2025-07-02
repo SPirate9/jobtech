@@ -32,6 +32,7 @@ Sources → Scraping → Nettoyage → Data Lake → Data Warehouse → API REST
 2. **GitHub API** - Tendances des repositories tech
 3. **Google Trends** - Intérêt pour les technologies
 4. **Stack Overflow Survey** - Données de salaires et compétences (dataset 2024)
+5. **Indeed Jobs** - Offres d'emploi tech en Europe (via JobSpy)
 
 ## Installation et utilisation
 

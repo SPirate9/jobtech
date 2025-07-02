@@ -34,6 +34,20 @@ def clean_adzuna_jobs():
         "nl": "Netherlands",
         "es": "Spain",
         "it": "Italy",
+        "gb": "United Kingdom",
+        "us": "United States",
+        "at": "Austria",
+        "au": "Australia",
+        "be": "Belgium",
+        "br": "Brazil",
+        "ca": "Canada",
+        "ch": "Switzerland",
+        "in": "India",
+        "mx": "Mexico",
+        "nz": "New Zealand",
+        "pl": "Poland",
+        "sg": "Singapore",
+        "za": "South Africa",
     }
     df["country_name"] = df["country"].map(country_mapping)
 
@@ -159,10 +173,16 @@ def clean_stackoverflow_survey():
         chunk_filtered = chunk[available_cols].copy()
 
         # Filtrer les pays européens
-        eu_countries = ["Germany", "France", "Netherlands", "Spain", "Italy", "Poland"]
+        eu_countries = ["Germany", "France", "Netherlands", "Spain", "Italy", "United Kingdom", "Austria", "Belgium", "Switzerland", "Poland"]
         if "Country" in chunk_filtered.columns:
             chunk_filtered = chunk_filtered[
                 chunk_filtered["Country"].isin(eu_countries)
+            ]
+
+        # Filtre les pays non européens
+        if "Country" in chunk_filtered.columns:
+            chunk_filtered = chunk_filtered[
+                chunk_filtered["Country"].notna() & (chunk_filtered["Country"] != "")
             ]
 
         if not chunk_filtered.empty:
@@ -227,6 +247,90 @@ def create_dimension_tables():
             "iso2": "IT",
             "country_name": "Italy",
             "region": "Southern Europe",
+            "currency": "EUR",
+        },
+         {
+            "iso2": "PL",
+            "country_name": "Poland",
+            "region": "Eastern Europe",
+            "currency": "PLN",
+        },
+        {
+            "iso2": "GB",
+            "country_name": "United Kingdom",
+            "region": "Western Europe",
+            "currency": "GBP",
+        },
+        {
+            "iso2": "US",
+            "country_name": "United States",
+            "region": "North America",
+            "currency": "USD",
+        },
+        {
+            "iso2": "CA",
+            "country_name": "Canada",
+            "region": "North America",
+            "currency": "CAD",
+        },
+        {
+            "iso2": "AU",
+            "country_name": "Australia",
+            "region": "Oceania",
+            "currency": "AUD",
+        },
+        {
+            "iso2": "BR",
+            "country_name": "Brazil",
+            "region": "South America",
+            "currency": "BRL",
+        },
+        {
+            "iso2": "IN",
+            "country_name": "India",
+            "region": "Asia",
+            "currency": "INR",
+        },
+        {
+            "iso2": "ZA",
+            "country_name": "South Africa",
+            "region": "Africa",
+            "currency": "ZAR",
+        },
+        {
+            "iso2": "CH",
+            "country_name": "Switzerland",
+            "region": "Western Europe",
+            "currency": "CHF",
+        },
+        {
+            "iso2": "AT",
+            "country_name": "Austria",
+            "region": "Western Europe",
+            "currency": "EUR",
+        },
+        {
+            "iso2": "SG",
+            "country_name": "Singapore",
+            "region": "Asia",
+            "currency": "SGD",
+        },
+        {
+            "iso2": "NZ",
+            "country_name": "New Zealand",
+            "region": "Oceania",
+            "currency": "NZD",
+        },
+        {
+            "iso2": "MX",
+            "country_name": "Mexico",
+            "region": "North America",
+            "currency": "MXN",
+        },
+        {
+            "iso2": "BE",
+            "country_name": "Belgium",
+            "region": "Western Europe",
             "currency": "EUR",
         },
     ]
