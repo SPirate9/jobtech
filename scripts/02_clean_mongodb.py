@@ -4,7 +4,9 @@ from datetime import datetime
 from loguru import logger
 from pymongo import MongoClient
 from dotenv import load_dotenv
+
 load_dotenv()
+
 # Répertoires
 CLEAN_DATA_DIR = "datasets_clean"
 os.makedirs(CLEAN_DATA_DIR, exist_ok=True)
@@ -14,11 +16,11 @@ logger.remove()
 logger.add(f"{CLEAN_DATA_DIR}/cleaning.log", level="INFO", rotation="1 day")
 
 # Connexion MongoDB via variable d'environnement
-load_dotenv()
 uri = os.getenv("MONGO_URI")
 if not uri:
     logger.error("La variable d'environnement MONGO_URI est manquante.")
     exit(1)
+
 try:
     client = MongoClient(uri)
     db = client["jobtech"]
@@ -28,21 +30,18 @@ except Exception as e:
     logger.error(f"Échec de connexion à MongoDB : {e}")
     exit(1)
 
+# Fonction utilitaire pour supprimer les colonnes texte
+def drop_string_columns(df):
+    return df.select_dtypes(exclude=["object", "string"])
+
 def clean_adzuna_jobs():
     logger.info("Nettoyage des données Adzuna")
     df = pd.DataFrame(list(db["adzuna_jobs"].find()))
     df.drop(columns=["_id"], inplace=True, errors="ignore")
 
     country_mapping = {
-        "fr": "France",
-        "de": "Germany",
-        "nl": "Netherlands",
-        "es": "Spain",
-        "it": "Italy",
-        "at": "Austria",
-        "be": "Belgium",
-        "ch": "Switzerland",
-        "pl": "Poland",
+        "fr": "France", "de": "Germany", "nl": "Netherlands", "es": "Spain",
+        "it": "Italy", "at": "Austria", "be": "Belgium", "ch": "Switzerland", "pl": "Poland",
     }
     df["country_name"] = df["country"].map(country_mapping)
 
@@ -51,16 +50,11 @@ def clean_adzuna_jobs():
             return []
         title_lower = title.lower()
         skills = []
-        if "python" in title_lower:
-            skills.append("Python")
-        if "javascript" in title_lower or "js" in title_lower:
-            skills.append("JavaScript")
-        if "react" in title_lower:
-            skills.append("React")
-        if "java" in title_lower and "javascript" not in title_lower:
-            skills.append("Java")
-        if "node" in title_lower:
-            skills.append("Node.js")
+        if "python" in title_lower: skills.append("Python")
+        if "javascript" in title_lower or "js" in title_lower: skills.append("JavaScript")
+        if "react" in title_lower: skills.append("React")
+        if "java" in title_lower and "javascript" not in title_lower: skills.append("Java")
+        if "node" in title_lower: skills.append("Node.js")
         return skills
 
     df["skills"] = df["title"].apply(extract_skills)
@@ -72,9 +66,11 @@ def clean_adzuna_jobs():
     df["created"] = pd.to_datetime(df["created"], errors="coerce")
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
 
+    # Supprimer les colonnes texte
+    df = drop_string_columns(df)
+
     df.to_csv(f"{CLEAN_DATA_DIR}/adzuna_jobs_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Adzuna nettoyé: {len(df)} offres")
-
 
 def clean_github_trends():
     logger.info("Nettoyage des données GitHub")
@@ -88,9 +84,11 @@ def clean_github_trends():
     df["forks"] = pd.to_numeric(df["forks"], errors="coerce").fillna(0)
     df["popularity_score"] = df["stars"] * 0.7 + df["forks"] * 0.3
 
+    # Supprimer les colonnes texte
+    df = drop_string_columns(df)
+
     df.to_csv(f"{CLEAN_DATA_DIR}/github_trends_clean.csv", index=False, encoding="utf-8")
     logger.info(f"GitHub nettoyé: {len(df)} repos")
-
 
 def clean_google_trends():
     logger.info("Nettoyage des données Google Trends")
@@ -112,9 +110,11 @@ def clean_google_trends():
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
     df["interest_value"] = pd.to_numeric(df["interest_value"], errors="coerce")
 
+    # Supprimer les colonnes texte
+    df = drop_string_columns(df)
+
     df.to_csv(f"{CLEAN_DATA_DIR}/google_trends_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Google Trends nettoyé: {len(df)} points de données")
-
 
 def clean_stackoverflow_survey():
     logger.info("Nettoyage des données Stack Overflow")
@@ -127,7 +127,7 @@ def clean_stackoverflow_survey():
     ]
     df = df[[col for col in useful_cols if col in df.columns]]
 
-    eu_countries = ["Germany", "France", "Netherlands", "Spain", "Italy", "Poland","Switzerland","Austria","Belgium"]
+    eu_countries = ["Germany", "France", "Netherlands", "Spain", "Italy", "Poland", "Switzerland", "Austria", "Belgium"]
     df = df[df["Country"].isin(eu_countries)]
 
     if "CompTotal" in df.columns:
@@ -138,23 +138,25 @@ def clean_stackoverflow_survey():
     if "LanguageHaveWorkedWith" in df.columns:
         df["languages_list"] = df["LanguageHaveWorkedWith"].fillna("").str.split(";")
 
+    # Supprimer les colonnes texte
+    df = drop_string_columns(df)
+
     df.to_csv(f"{CLEAN_DATA_DIR}/stackoverflow_survey_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Stack Overflow nettoyé: {len(df)} réponses")
-
 
 def create_dimension_tables():
     logger.info("Création des tables de dimensions")
 
     countries_data = [
-            {"iso2": "FR", "country_name": "France", "region": "Western Europe", "currency": "EUR"},
-            {"iso2": "DE", "country_name": "Germany", "region": "Western Europe", "currency": "EUR"},
-            {"iso2": "NL", "country_name": "Netherlands", "region": "Western Europe", "currency": "EUR"},
-            {"iso2": "ES", "country_name": "Spain", "region": "Southern Europe", "currency": "EUR"},
-            {"iso2": "IT", "country_name": "Italy", "region": "Southern Europe", "currency": "EUR"},
-            {"iso2": "AT", "country_name": "Austria", "region": "Central Europe", "currency": "EUR"},
-            {"iso2": "BE", "country_name": "Belgium", "region": "Western Europe", "currency": "EUR"},
-            {"iso2": "CH", "country_name": "Switzerland", "region": "Western Europe", "currency": "EUR"},
-            {"iso2": "PL", "country_name": "Poland", "region": "Eastern Europe", "currency": "EUR"}
+        {"iso2": "FR", "country_name": "France", "region": "Western Europe", "currency": "EUR"},
+        {"iso2": "DE", "country_name": "Germany", "region": "Western Europe", "currency": "EUR"},
+        {"iso2": "NL", "country_name": "Netherlands", "region": "Western Europe", "currency": "EUR"},
+        {"iso2": "ES", "country_name": "Spain", "region": "Southern Europe", "currency": "EUR"},
+        {"iso2": "IT", "country_name": "Italy", "region": "Southern Europe", "currency": "EUR"},
+        {"iso2": "AT", "country_name": "Austria", "region": "Central Europe", "currency": "EUR"},
+        {"iso2": "BE", "country_name": "Belgium", "region": "Western Europe", "currency": "EUR"},
+        {"iso2": "CH", "country_name": "Switzerland", "region": "Western Europe", "currency": "EUR"},
+        {"iso2": "PL", "country_name": "Poland", "region": "Eastern Europe", "currency": "EUR"}
     ]
     pd.DataFrame(countries_data).to_csv(f"{CLEAN_DATA_DIR}/dim_countries.csv", index=False)
 
@@ -182,8 +184,6 @@ def create_dimension_tables():
 
     logger.info("Tables de dimensions créées")
 
-
-
 def main():
     start = datetime.now()
     logger.info("Démarrage du nettoyage TalentInsight")
@@ -201,7 +201,6 @@ def main():
         if file.endswith(".csv"):
             size = os.path.getsize(os.path.join(CLEAN_DATA_DIR, file))
             logger.info(f"Fichier nettoyé: {file} ({size} bytes)")
-
 
 if __name__ == "__main__":
     main()
