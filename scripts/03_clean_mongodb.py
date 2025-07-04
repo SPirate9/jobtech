@@ -7,15 +7,13 @@ from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 import re
 load_dotenv()
-# Répertoires
+
 CLEAN_DATA_DIR = "datasets_clean"
 os.makedirs(CLEAN_DATA_DIR, exist_ok=True)
 
-# Logger
 logger.remove()
 logger.add(f"{CLEAN_DATA_DIR}/cleaning.log", level="INFO", rotation="1 day")
 
-# Connexion MongoDB via variable d'environnement
 load_dotenv()
 uri = os.getenv("MONGO_URI")
 if not uri:
@@ -37,7 +35,6 @@ def clean_adzuna_jobs():
     df.drop(columns=["_id"], inplace=True, errors="ignore")
     logger.info(f"Lignes initiales : {len(df)}")
 
-    # Mapping pays
     country_mapping = {
         "fr": "France",
         "de": "Germany",
@@ -86,7 +83,6 @@ def clean_adzuna_jobs():
 
     df["salary_avg"] = (df["salary_min"] + df["salary_max"]) / 2
 
-    # Dates
     df["created"] = pd.to_datetime(df["created"], errors="coerce")
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
 
@@ -107,22 +103,18 @@ def clean_adzuna_jobs():
     df.to_csv(f"{CLEAN_DATA_DIR}/adzuna_jobs_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Adzuna nettoyé: {len(df)} offres")
 
-
 def clean_github_trends():
     logger.info("Nettoyage des données GitHub")
     df = pd.DataFrame(list(db["github_trends"].find()))
     df.drop(columns=["_id"], inplace=True, errors="ignore")
-
     df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
     df["updated_at"] = pd.to_datetime(df["updated_at"], errors="coerce")
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
     df["stars"] = pd.to_numeric(df["stars"], errors="coerce").fillna(0)
     df["forks"] = pd.to_numeric(df["forks"], errors="coerce").fillna(0)
     df["popularity_score"] = df["stars"] * 0.7 + df["forks"] * 0.3
-
     df.to_csv(f"{CLEAN_DATA_DIR}/github_trends_clean.csv", index=False, encoding="utf-8")
     logger.info(f"GitHub nettoyé: {len(df)} repos")
-
 
 def clean_google_trends():
     logger.info("Nettoyage des données Google Trends")
@@ -150,8 +142,6 @@ def clean_google_trends():
 
 def clean_stackoverflow_survey():
     logger.info("Nettoyage des données Stack Overflow")
-
-    # Chargement depuis MongoDB
     df = pd.DataFrame(list(db["stackoverflow_survey_2024"].find()))
     df.drop(columns=["_id"], inplace=True, errors="ignore")
 
@@ -171,22 +161,18 @@ def clean_stackoverflow_survey():
         df = df[df["CompTotal"].notna()]
         df = df[(df["CompTotal"] > 10000) & (df["CompTotal"] < 500000)]
 
-    # Liste des colonnes catégorielles à filtrer
     cat_cols = ["Country", "LanguageHaveWorkedWith", "Currency", "DevType", "YearsCodePro", "Employment", "EdLevel"]
-    cat_cols = [col for col in cat_cols if col in df.columns]  # filtrer celles qui existent réellement
+    cat_cols = [col for col in cat_cols if col in df.columns] 
 
-    # Supprimer lignes avec valeurs nulles ou vides ou listes vides dans les colonnes catégorielles
     for col in cat_cols:
-        df = df[~df[col].isna()]                         # enlever les nulls
-        df = df[df[col] != ""]                           # enlever les chaînes vides
-        df = df[df[col].astype(str) != "[]"]             # enlever les listes vides comme chaînes
-        df = df[df[col].astype(str) != "['']"]           # enlever les listes avec chaîne vide
+        df = df[~df[col].isna()]                  
+        df = df[df[col] != ""]                        
+        df = df[df[col].astype(str) != "[]"]            
+        df = df[df[col].astype(str) != "['']"]           
 
-    # Créer la colonne "languages_list"
     if "LanguageHaveWorkedWith" in df.columns:
         df["languages_list"] = df["LanguageHaveWorkedWith"].fillna("").str.split(";")
 
-    # Sauvegarde
     df.to_csv(f"{CLEAN_DATA_DIR}/stackoverflow_survey_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Stack Overflow nettoyé: {len(df)} réponses")
 
@@ -196,48 +182,40 @@ def clean_indeed_jobs():
     df = pd.DataFrame(list(db["indeed_jobs"].find()))
     df.drop(columns=["_id"], inplace=True, errors="ignore")
     logger.info(f"Lignes initiales : {len(df)}")
-    
-    # Garde seulement les offres avec titre et entreprise
+
     df = df[df["title"].notna() & (df["title"] != "")]
     df = df[df["company"].notna() & (df["company"] != "")]
     df = df.drop_duplicates(subset=["id"], keep="first")
-    
-    # Extraire infos utiles de la description avant de la supprimer
+
     if "description" in df.columns:
-        # Extraction de salaires depuis description
         for idx, row in df.iterrows():
             desc = str(row.get("description", "")).lower()
-            
-            # Chercher patterns de salaires
             import re
             salary_patterns = [
                 r'(\d+)[k€]\s*-\s*(\d+)[k€]',  # 50k€ - 70k€
                 r'€\s*(\d+)[,.]?(\d+)?\s*k?\s*-\s*€?\s*(\d+)[,.]?(\d+)?\s*k?',  # €50k - €70k
                 r'salary:\s*€?(\d+)[,.]?(\d+)?\s*k?',  # salary: 50k
             ]
-            
+
             for pattern in salary_patterns:
                 match = re.search(pattern, desc)
                 if match and pd.isna(row.get("min_amount")):
                     try:
                         min_sal = float(match.group(1))
                         max_sal = float(match.group(2)) if len(match.groups()) > 1 else min_sal
-                        
-                        # Si en k, multiplier par 1000
+
                         if 'k' in match.group(0):
                             min_sal *= 1000
                             max_sal *= 1000
-                            
+
                         df.at[idx, "min_amount"] = min_sal
                         df.at[idx, "max_amount"] = max_sal
                         break
                     except:
                         pass
-        
-        # SUPPRIMER la colonne description (inutile maintenant)
+
         df = df.drop(columns=["description"], errors="ignore")
-    
-    # Extraction skills depuis titre
+
     def extract_skills(title):
         if not title:
             return []
@@ -256,26 +234,25 @@ def clean_indeed_jobs():
         if "node" in title_lower:
             skills.append("Node.js")
         return skills
-    
+
     df["skills"] = df["title"].apply(extract_skills)
-    
-    # Salaires : garde NA si pas de données
     df["min_amount"] = pd.to_numeric(df["min_amount"], errors="coerce")
     df["max_amount"] = pd.to_numeric(df["max_amount"], errors="coerce")
     df["salary_avg"] = (df["min_amount"] + df["max_amount"]) / 2
-    
-    # Dates
     df["date_posted"] = pd.to_datetime(df["date_posted"], errors="coerce")
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
-    
-    # Suppression des colonnes inutiles (URLs, logos, etc.)
+
     columns_to_remove = [
-        "job_url", "job_url_direct", "company_url_direct", "url", "redirect_url", 
-        "company_url", "company_logo", "logo", "logo_url", "company_logo_url", 
-        "apply_url", "external_url", "thumbnail", "image", "company_image", "favicon"
+        "job_url", "job_url_direct", "company_url_direct", "url", "redirect_url",
+        "company_url", "company_logo", "logo", "logo_url", "company_logo_url",
+        "apply_url", "external_url", "thumbnail", "image", "company_image", "favicon","salary_source", "interval", "min_amount", "max_amount", "currency",
+        "experience_range", "company_rating", "company_reviews_count", "vacancy_count",
+        "work_from_home_type", "company_addresses", "company_num_employees",
+        "company_revenue", "company_description", "listing_type", "emails","job_level","job_function", "salary_avg"
     ]
     df = df.drop(columns=[col for col in columns_to_remove if col in df.columns], errors='ignore')
-    
+    df = df[df["skills"].apply(lambda x: isinstance(x, list) and len(x) > 0)]
+
     logger.info(f"Lignes après nettoyage : {len(df)}")
     df.to_csv(f"{CLEAN_DATA_DIR}/indeed_jobs_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Indeed nettoyé: {len(df)} offres")
@@ -287,14 +264,11 @@ def clean_linkedin_jobs():
     df.drop(columns=["_id"], inplace=True, errors="ignore")
     logger.info(f"Lignes initiales : {len(df)}")
     
-    # Garde seulement les offres avec titre et entreprise
     df = df[df["title"].notna() & (df["title"] != "")]
     df = df[df["company"].notna() & (df["company"] != "")]
     df = df.drop_duplicates(subset=["id"], keep="first")
     
-    # Extraire infos utiles de la description avant de la supprimer
     if "description" in df.columns:
-        # Extraction de salaires depuis description
         for idx, row in df.iterrows():
             desc = str(row.get("description", "")).lower()
             
@@ -314,7 +288,6 @@ def clean_linkedin_jobs():
                         min_sal = float(match.group(1))
                         max_sal = float(match.group(2)) if len(match.groups()) > 1 else min_sal
                         
-                        # Si en k, multiplier par 1000
                         if 'k' in match.group(0):
                             min_sal *= 1000
                             max_sal *= 1000
@@ -325,10 +298,8 @@ def clean_linkedin_jobs():
                     except:
                         pass
         
-        # SUPPRIMER la colonne description (inutile maintenant)
         df = df.drop(columns=["description"], errors="ignore")
     
-    # Extraction skills depuis titre
     def extract_skills(title):
         if not title:
             return []
@@ -351,24 +322,23 @@ def clean_linkedin_jobs():
         return skills
     
     df["skills"] = df["title"].apply(extract_skills)
-    
-    # Salaires : garde NA si pas de données (LinkedIn en a rarement)
     df["min_amount"] = pd.to_numeric(df["min_amount"], errors="coerce")
     df["max_amount"] = pd.to_numeric(df["max_amount"], errors="coerce")
     df["salary_avg"] = (df["min_amount"] + df["max_amount"]) / 2
-    
-    # Dates
     df["date_posted"] = pd.to_datetime(df["date_posted"], errors="coerce")
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
-    
-    # Suppression des colonnes inutiles (URLs, logos, etc.)
+
     columns_to_remove = [
-        "job_url", "job_url_direct", "company_url_direct", "url", "redirect_url", 
-        "company_url", "company_logo", "logo", "logo_url", "company_logo_url", 
-        "apply_url", "external_url", "thumbnail", "image", "company_image", "favicon"
+        "job_url", "job_url_direct", "company_url_direct", "url", "redirect_url",
+        "company_url", "company_logo", "logo", "logo_url", "company_logo_url",
+        "apply_url", "external_url", "thumbnail", "image", "company_image", "favicon","salary_source", "interval", "min_amount", "max_amount", "currency",
+        "experience_range", "company_rating", "company_reviews_count", "vacancy_count",
+        "work_from_home_type", "company_addresses", "company_num_employees",
+        "company_revenue", "company_description", "listing_type", "emails","job_level","job_function", "salary_avg"
     ]
     df = df.drop(columns=[col for col in columns_to_remove if col in df.columns], errors='ignore')
-    
+    df = df[df["skills"].apply(lambda x: isinstance(x, list) and len(x) > 0)]
+
     logger.info(f"Lignes après nettoyage : {len(df)}")
     df.to_csv(f"{CLEAN_DATA_DIR}/linkedin_jobs_clean.csv", index=False, encoding="utf-8")
     logger.info(f"LinkedIn nettoyé: {len(df)} offres")
