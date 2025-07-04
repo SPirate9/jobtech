@@ -1,0 +1,15 @@
+# TalentInsight Pipeline Automation
+# Crontab pour automatiser le pipeline de données
+
+# Scraping quotidien à 6h du matin
+0 6 * * * cd /Users/saad/jobtech && ./scripts/run_pipeline.sh scrape
+
+# Pipeline complet tous les dimanche à 2h du matin
+0 2 * * 0 cd /Users/saad/jobtech && ./scripts/run_pipeline.sh all
+
+# Nettoyage seul tous les jours à 8h (après scraping)
+0 8 * * * cd /Users/saad/jobtech && ./scripts/run_pipeline.sh clean
+
+# Exemple d'installation :
+# crontab -e
+# Puis coller le contenu ci-dessus

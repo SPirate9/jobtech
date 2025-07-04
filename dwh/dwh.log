@@ -1,24 +1,54 @@
-2025-06-30 20:13:58.070 | INFO     | __main__:main:333 - Démarrage chargement Data Warehouse
-2025-06-30 20:13:58.071 | INFO     | __main__:create_dwh_schema:21 - Création du schéma Data Warehouse
-2025-06-30 20:13:58.093 | INFO     | __main__:create_dwh_schema:141 - Schéma Data Warehouse créé
-2025-06-30 20:13:58.093 | INFO     | __main__:load_dimensions:145 - Chargement des dimensions
-2025-06-30 20:13:58.166 | INFO     | __main__:load_dimensions:184 - Dimensions chargées
-2025-06-30 20:13:58.167 | INFO     | __main__:load_job_offers:188 - Chargement des offres d'emploi
-2025-06-30 20:13:59.413 | INFO     | __main__:load_job_offers:229 - Offres d'emploi chargées: 804
-2025-06-30 20:13:59.414 | INFO     | __main__:load_github_trends:233 - Chargement des tendances GitHub
-2025-06-30 20:14:00.429 | INFO     | __main__:load_github_trends:259 - Tendances GitHub chargées: 600
-2025-06-30 20:14:00.430 | INFO     | __main__:load_google_trends:263 - Chargement des tendances Google
-2025-06-30 20:14:00.561 | INFO     | __main__:load_google_trends:283 - Tendances recherche chargées: 558
-2025-06-30 20:14:00.562 | INFO     | __main__:load_stackoverflow_survey:287 - Chargement enquête Stack Overflow
-2025-06-30 20:14:01.501 | INFO     | __main__:load_stackoverflow_survey:309 - Enquête Stack Overflow chargée: 7382
-2025-06-30 20:14:01.503 | INFO     | __main__:create_indexes:313 - Création des index
-2025-06-30 20:14:01.522 | INFO     | __main__:create_indexes:328 - Index créés
-2025-06-30 20:14:01.523 | INFO     | __main__:main:351 - Table d_country: 5 lignes
-2025-06-30 20:14:01.523 | INFO     | __main__:main:351 - Table d_skill: 9 lignes
-2025-06-30 20:14:01.523 | INFO     | __main__:main:351 - Table d_source: 4 lignes
-2025-06-30 20:14:01.525 | INFO     | __main__:main:351 - Table f_job_offers: 804 lignes
-2025-06-30 20:14:01.525 | INFO     | __main__:main:351 - Table f_github_trends: 600 lignes
-2025-06-30 20:14:01.526 | INFO     | __main__:main:351 - Table f_search_trends: 558 lignes
-2025-06-30 20:14:01.526 | INFO     | __main__:main:351 - Table f_survey_responses: 7382 lignes
-2025-06-30 20:14:01.527 | INFO     | __main__:main:358 - Data Warehouse chargé en 3.5s
-2025-06-30 20:14:01.527 | INFO     | __main__:main:359 - Base de données: dwh/talentinsight.db
+2025-07-04 12:07:23.315 | INFO     | __main__:main:441 - Démarrage chargement Data Warehouse
+2025-07-04 12:07:23.317 | INFO     | __main__:create_dwh_schema:22 - Création du schéma Data Warehouse
+2025-07-04 12:07:23.322 | INFO     | __main__:create_dwh_schema:160 - Schéma Data Warehouse créé
+2025-07-04 12:07:23.322 | INFO     | __main__:load_dimensions:165 - Chargement des dimensions
+2025-07-04 12:07:23.400 | INFO     | __main__:load_dimensions:206 - Dimensions chargées
+2025-07-04 12:07:23.400 | INFO     | __main__:load_job_offers:211 - Chargement des offres d'emploi
+2025-07-04 12:07:23.406 | INFO     | __main__:load_job_offers:228 - Chargement Adzuna...
+2025-07-04 12:07:25.895 | INFO     | __main__:load_job_offers:255 - Chargement Indeed...
+2025-07-04 12:07:26.197 | INFO     | __main__:load_job_offers:280 - Chargement LinkedIn...
+2025-07-04 12:07:26.768 | INFO     | __main__:load_job_offers:306 - Offres d'emploi chargées: 4208 (Adzuna + Indeed + LinkedIn)
+2025-07-04 12:07:26.770 | INFO     | __main__:load_github_trends:311 - Chargement des tendances GitHub
+2025-07-04 12:07:28.308 | INFO     | __main__:load_github_trends:349 - Tendances GitHub chargées: 1700
+2025-07-04 12:07:28.309 | INFO     | __main__:load_google_trends:354 - Chargement des tendances Google
+2025-07-04 12:07:28.580 | INFO     | __main__:load_google_trends:382 - Tendances recherche chargées: 1656
+2025-07-04 12:07:28.581 | INFO     | __main__:load_stackoverflow_survey:387 - Chargement enquête Stack Overflow
+2025-07-04 12:07:28.712 | INFO     | __main__:load_stackoverflow_survey:415 - Enquête Stack Overflow chargée: 1479
+2025-07-04 12:07:28.713 | INFO     | __main__:create_indexes:420 - Création des index
+2025-07-04 12:07:28.741 | INFO     | __main__:create_indexes:435 - Index créés
+2025-07-04 12:07:28.741 | INFO     | __main__:main:467 - Table d_country: 9 lignes
+2025-07-04 12:07:28.741 | INFO     | __main__:main:467 - Table d_skill: 9 lignes
+2025-07-04 12:07:28.742 | INFO     | __main__:main:467 - Table d_source: 6 lignes
+2025-07-04 12:07:28.742 | INFO     | __main__:main:467 - Table f_job_offers: 4208 lignes
+2025-07-04 12:07:28.742 | INFO     | __main__:main:467 - Table f_github_trends: 1700 lignes
+2025-07-04 12:07:28.743 | INFO     | __main__:main:467 - Table f_search_trends: 1656 lignes
+2025-07-04 12:07:28.744 | INFO     | __main__:main:467 - Table f_survey_responses: 1479 lignes
+2025-07-04 12:07:28.745 | INFO     | __main__:main:474 - Data Warehouse chargé en 5.4s
+2025-07-04 12:07:28.746 | INFO     | __main__:main:475 - Base de données: dwh/talentinsight.db
+2025-07-04 12:16:39.322 | INFO     | __main__:main:451 - Démarrage chargement Data Warehouse
+2025-07-04 12:16:39.326 | INFO     | __main__:create_dwh_schema:22 - Création du schéma Data Warehouse
+2025-07-04 12:16:39.332 | INFO     | __main__:create_dwh_schema:160 - Schéma Data Warehouse créé
+2025-07-04 12:16:39.332 | INFO     | __main__:load_dimensions:165 - Chargement des dimensions
+2025-07-04 12:16:39.420 | INFO     | __main__:load_dimensions:216 - Dimensions chargées
+2025-07-04 12:16:39.421 | INFO     | __main__:load_job_offers:221 - Chargement des offres d'emploi
+2025-07-04 12:16:39.430 | INFO     | __main__:load_job_offers:238 - Chargement Adzuna...
+2025-07-04 12:16:42.790 | INFO     | __main__:load_job_offers:265 - Chargement Indeed...
+2025-07-04 12:16:43.163 | INFO     | __main__:load_job_offers:290 - Chargement LinkedIn...
+2025-07-04 12:16:43.737 | INFO     | __main__:load_job_offers:316 - Offres d'emploi chargées: 4208 (Adzuna + Indeed + LinkedIn)
+2025-07-04 12:16:43.739 | INFO     | __main__:load_github_trends:321 - Chargement des tendances GitHub
+2025-07-04 12:16:45.146 | INFO     | __main__:load_github_trends:359 - Tendances GitHub chargées: 1700
+2025-07-04 12:16:45.147 | INFO     | __main__:load_google_trends:364 - Chargement des tendances Google
+2025-07-04 12:16:45.455 | INFO     | __main__:load_google_trends:392 - Tendances recherche chargées: 1656
+2025-07-04 12:16:45.456 | INFO     | __main__:load_stackoverflow_survey:397 - Chargement enquête Stack Overflow
+2025-07-04 12:16:45.642 | INFO     | __main__:load_stackoverflow_survey:425 - Enquête Stack Overflow chargée: 1479
+2025-07-04 12:16:45.642 | INFO     | __main__:create_indexes:430 - Création des index
+2025-07-04 12:16:45.663 | INFO     | __main__:create_indexes:445 - Index créés
+2025-07-04 12:16:45.664 | INFO     | __main__:main:477 - Table d_country: 9 lignes
+2025-07-04 12:16:45.664 | INFO     | __main__:main:477 - Table d_skill: 9 lignes
+2025-07-04 12:16:45.664 | INFO     | __main__:main:477 - Table d_source: 6 lignes
+2025-07-04 12:16:45.664 | INFO     | __main__:main:477 - Table f_job_offers: 4208 lignes
+2025-07-04 12:16:45.664 | INFO     | __main__:main:477 - Table f_github_trends: 1700 lignes
+2025-07-04 12:16:45.665 | INFO     | __main__:main:477 - Table f_search_trends: 1656 lignes
+2025-07-04 12:16:45.665 | INFO     | __main__:main:477 - Table f_survey_responses: 1479 lignes
+2025-07-04 12:16:45.665 | INFO     | __main__:main:484 - Data Warehouse chargé en 6.3s
+2025-07-04 12:16:45.665 | INFO     | __main__:main:485 - Base de données: dwh/talentinsight.db

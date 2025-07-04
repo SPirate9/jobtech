@@ -4,6 +4,8 @@ from datetime import datetime
 from loguru import logger
 from pymongo import MongoClient
 from dotenv import load_dotenv
+from bs4 import BeautifulSoup
+import re
 load_dotenv()
 # Répertoires
 CLEAN_DATA_DIR = "datasets_clean"
@@ -30,9 +32,12 @@ except Exception as e:
 
 def clean_adzuna_jobs():
     logger.info("Nettoyage des données Adzuna")
+
     df = pd.DataFrame(list(db["adzuna_jobs"].find()))
     df.drop(columns=["_id"], inplace=True, errors="ignore")
+    logger.info(f"Lignes initiales : {len(df)}")
 
+    # Mapping pays
     country_mapping = {
         "fr": "France",
         "de": "Germany",
@@ -67,10 +72,37 @@ def clean_adzuna_jobs():
 
     df["salary_min"] = pd.to_numeric(df["salary_min"], errors="coerce")
     df["salary_max"] = pd.to_numeric(df["salary_max"], errors="coerce")
+
+    df = df[(df["salary_min"].isna()) | (df["salary_min"] >= 10000)]
+    df = df[(df["salary_max"].isna()) | (df["salary_max"] >= 10000)]
+
+    if df["salary_min"].notna().sum() > 0:
+        median_min = df["salary_min"].median()
+        df["salary_min"] = df["salary_min"].fillna(median_min)
+
+    if df["salary_max"].notna().sum() > 0:
+        median_max = df["salary_max"].median()
+        df["salary_max"] = df["salary_max"].fillna(median_max)
+
     df["salary_avg"] = (df["salary_min"] + df["salary_max"]) / 2
 
+    # Dates
     df["created"] = pd.to_datetime(df["created"], errors="coerce")
     df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
+
+    cat_cols = [
+        "country", "query", "title", "company", "location",
+        "description", "country_name", "skills"
+    ]
+    cat_cols = [col for col in cat_cols if col in df.columns]
+
+    for col in cat_cols:
+        df = df[~df[col].isna()]
+        df = df[df[col] != ""]
+        df = df[df[col].astype(str) != "[]"]
+        df = df[df[col].astype(str) != "['']"]
+
+    logger.info(f"Lignes après nettoyage complet : {len(df)}")
 
     df.to_csv(f"{CLEAN_DATA_DIR}/adzuna_jobs_clean.csv", index=False, encoding="utf-8")
     logger.info(f"Adzuna nettoyé: {len(df)} offres")
@@ -159,6 +191,188 @@ def clean_stackoverflow_survey():
     logger.info(f"Stack Overflow nettoyé: {len(df)} réponses")
 
 
+def clean_indeed_jobs():
+    logger.info("Nettoyage des données Indeed")
+    df = pd.DataFrame(list(db["indeed_jobs"].find()))
+    df.drop(columns=["_id"], inplace=True, errors="ignore")
+    logger.info(f"Lignes initiales : {len(df)}")
+    
+    # Garde seulement les offres avec titre et entreprise
+    df = df[df["title"].notna() & (df["title"] != "")]
+    df = df[df["company"].notna() & (df["company"] != "")]
+    df = df.drop_duplicates(subset=["id"], keep="first")
+    
+    # Extraire infos utiles de la description avant de la supprimer
+    if "description" in df.columns:
+        # Extraction de salaires depuis description
+        for idx, row in df.iterrows():
+            desc = str(row.get("description", "")).lower()
+            
+            # Chercher patterns de salaires
+            import re
+            salary_patterns = [
+                r'(\d+)[k€]\s*-\s*(\d+)[k€]',  # 50k€ - 70k€
+                r'€\s*(\d+)[,.]?(\d+)?\s*k?\s*-\s*€?\s*(\d+)[,.]?(\d+)?\s*k?',  # €50k - €70k
+                r'salary:\s*€?(\d+)[,.]?(\d+)?\s*k?',  # salary: 50k
+            ]
+            
+            for pattern in salary_patterns:
+                match = re.search(pattern, desc)
+                if match and pd.isna(row.get("min_amount")):
+                    try:
+                        min_sal = float(match.group(1))
+                        max_sal = float(match.group(2)) if len(match.groups()) > 1 else min_sal
+                        
+                        # Si en k, multiplier par 1000
+                        if 'k' in match.group(0):
+                            min_sal *= 1000
+                            max_sal *= 1000
+                            
+                        df.at[idx, "min_amount"] = min_sal
+                        df.at[idx, "max_amount"] = max_sal
+                        break
+                    except:
+                        pass
+        
+        # SUPPRIMER la colonne description (inutile maintenant)
+        df = df.drop(columns=["description"], errors="ignore")
+    
+    # Extraction skills depuis titre
+    def extract_skills(title):
+        if not title:
+            return []
+        title_lower = title.lower()
+        skills = []
+        if "python" in title_lower:
+            skills.append("Python")
+        if "javascript" in title_lower or "js" in title_lower:
+            skills.append("JavaScript")
+        if "react" in title_lower:
+            skills.append("React")
+        if "java" in title_lower and "javascript" not in title_lower:
+            skills.append("Java")
+        if "angular" in title_lower:
+            skills.append("Angular")
+        if "node" in title_lower:
+            skills.append("Node.js")
+        return skills
+    
+    df["skills"] = df["title"].apply(extract_skills)
+    
+    # Salaires : garde NA si pas de données
+    df["min_amount"] = pd.to_numeric(df["min_amount"], errors="coerce")
+    df["max_amount"] = pd.to_numeric(df["max_amount"], errors="coerce")
+    df["salary_avg"] = (df["min_amount"] + df["max_amount"]) / 2
+    
+    # Dates
+    df["date_posted"] = pd.to_datetime(df["date_posted"], errors="coerce")
+    df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
+    
+    # Suppression des colonnes inutiles (URLs, logos, etc.)
+    columns_to_remove = [
+        "job_url", "job_url_direct", "company_url_direct", "url", "redirect_url", 
+        "company_url", "company_logo", "logo", "logo_url", "company_logo_url", 
+        "apply_url", "external_url", "thumbnail", "image", "company_image", "favicon"
+    ]
+    df = df.drop(columns=[col for col in columns_to_remove if col in df.columns], errors='ignore')
+    
+    logger.info(f"Lignes après nettoyage : {len(df)}")
+    df.to_csv(f"{CLEAN_DATA_DIR}/indeed_jobs_clean.csv", index=False, encoding="utf-8")
+    logger.info(f"Indeed nettoyé: {len(df)} offres")
+
+
+def clean_linkedin_jobs():
+    logger.info("Nettoyage des données LinkedIn")
+    df = pd.DataFrame(list(db["linkedin_jobs"].find()))
+    df.drop(columns=["_id"], inplace=True, errors="ignore")
+    logger.info(f"Lignes initiales : {len(df)}")
+    
+    # Garde seulement les offres avec titre et entreprise
+    df = df[df["title"].notna() & (df["title"] != "")]
+    df = df[df["company"].notna() & (df["company"] != "")]
+    df = df.drop_duplicates(subset=["id"], keep="first")
+    
+    # Extraire infos utiles de la description avant de la supprimer
+    if "description" in df.columns:
+        # Extraction de salaires depuis description
+        for idx, row in df.iterrows():
+            desc = str(row.get("description", "")).lower()
+            
+            # Chercher patterns de salaires
+            import re
+            salary_patterns = [
+                r'(\d+)[k€$]\s*-\s*(\d+)[k€$]',  # 50k€ - 70k€
+                r'[€$]\s*(\d+)[,.]?(\d+)?\s*k?\s*-\s*[€$]?\s*(\d+)[,.]?(\d+)?\s*k?',  # €50k - €70k
+                r'salary:\s*[€$]?(\d+)[,.]?(\d+)?\s*k?',  # salary: 50k
+                r'compensation:\s*[€$]?(\d+)[,.]?(\d+)?\s*k?',  # compensation: 50k
+            ]
+            
+            for pattern in salary_patterns:
+                match = re.search(pattern, desc)
+                if match and pd.isna(row.get("min_amount")):
+                    try:
+                        min_sal = float(match.group(1))
+                        max_sal = float(match.group(2)) if len(match.groups()) > 1 else min_sal
+                        
+                        # Si en k, multiplier par 1000
+                        if 'k' in match.group(0):
+                            min_sal *= 1000
+                            max_sal *= 1000
+                            
+                        df.at[idx, "min_amount"] = min_sal
+                        df.at[idx, "max_amount"] = max_sal
+                        break
+                    except:
+                        pass
+        
+        # SUPPRIMER la colonne description (inutile maintenant)
+        df = df.drop(columns=["description"], errors="ignore")
+    
+    # Extraction skills depuis titre
+    def extract_skills(title):
+        if not title:
+            return []
+        title_lower = title.lower()
+        skills = []
+        if "python" in title_lower:
+            skills.append("Python")
+        if "javascript" in title_lower or "js" in title_lower:
+            skills.append("JavaScript")
+        if "react" in title_lower:
+            skills.append("React")
+        if "java" in title_lower and "javascript" not in title_lower:
+            skills.append("Java")
+        if "angular" in title_lower:
+            skills.append("Angular")
+        if "node" in title_lower:
+            skills.append("Node.js")
+        if "full stack" in title_lower:
+            skills.append("Full Stack")
+        return skills
+    
+    df["skills"] = df["title"].apply(extract_skills)
+    
+    # Salaires : garde NA si pas de données (LinkedIn en a rarement)
+    df["min_amount"] = pd.to_numeric(df["min_amount"], errors="coerce")
+    df["max_amount"] = pd.to_numeric(df["max_amount"], errors="coerce")
+    df["salary_avg"] = (df["min_amount"] + df["max_amount"]) / 2
+    
+    # Dates
+    df["date_posted"] = pd.to_datetime(df["date_posted"], errors="coerce")
+    df["scraped_at"] = pd.to_datetime(df["scraped_at"], errors="coerce")
+    
+    # Suppression des colonnes inutiles (URLs, logos, etc.)
+    columns_to_remove = [
+        "job_url", "job_url_direct", "company_url_direct", "url", "redirect_url", 
+        "company_url", "company_logo", "logo", "logo_url", "company_logo_url", 
+        "apply_url", "external_url", "thumbnail", "image", "company_image", "favicon"
+    ]
+    df = df.drop(columns=[col for col in columns_to_remove if col in df.columns], errors='ignore')
+    
+    logger.info(f"Lignes après nettoyage : {len(df)}")
+    df.to_csv(f"{CLEAN_DATA_DIR}/linkedin_jobs_clean.csv", index=False, encoding="utf-8")
+    logger.info(f"LinkedIn nettoyé: {len(df)} offres")
+
 def create_dimension_tables():
     logger.info("Création des tables de dimensions")
 
@@ -193,13 +407,26 @@ def create_dimension_tables():
         {"source_name": "GitHub"},
         {"source_name": "Google Trends"},
         {"source_name": "Stack Overflow"},
-        {"source_name": "Indeed"}
+        {"source_name": "Indeed"},
+        {"source_name": "LinkedIn"}
     ]
     pd.DataFrame(sources_data).to_csv(f"{CLEAN_DATA_DIR}/dim_sources.csv", index=False)
 
     logger.info("Tables de dimensions créées")
 
-
+def clean_html_simple(text):
+    """Nettoie le HTML très simplement"""
+    if pd.isna(text) or text == "":
+        return ""
+    try:
+        # Retirer toutes les balises HTML
+        soup = BeautifulSoup(str(text), 'html.parser')
+        clean_text = soup.get_text()
+        # Nettoyer les espaces
+        clean_text = re.sub(r'\s+', ' ', clean_text).strip()
+        return clean_text
+    except:
+        return ""
 
 def main():
     start = datetime.now()
@@ -209,6 +436,8 @@ def main():
     clean_github_trends()
     clean_google_trends()
     clean_stackoverflow_survey()
+    clean_indeed_jobs()
+    clean_linkedin_jobs()
     create_dimension_tables()
 
     duration = datetime.now() - start

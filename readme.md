@@ -106,6 +106,21 @@ Authorization: Token [votre-token]
 - `f_search_trends` - Tendances de recherche Google
 - `f_survey_responses` - Réponses d'enquêtes
 
+## Automatisation
+
+Le pipeline de données est automatisé via des scripts d'orchestration :
+
+### Script principal
+```bash
+./scripts/run_pipeline.sh all  # Pipeline complet
+./scripts/run_pipeline.sh scrape  # Scraping uniquement
+```
+
+### Automatisation système
+- **Crontab** : Exécution quotidienne/hebdomadaire programmée
+- **LaunchD** (macOS) : Service système pour automatisation
+- **Installation** : `./automation/install_automation.sh`
+
 ## Livrables du projet
 
 1. Repository Git avec code source complet

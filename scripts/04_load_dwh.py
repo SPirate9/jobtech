@@ -166,7 +166,6 @@ def load_dimensions(conn):
 
     # Dimension pays
     countries_df = pd.read_csv(f"{CLEAN_DATA_DIR}/dim_countries.csv")
-    # Ajouter une colonne id_country
     countries_df.insert(0, "id_country", range(1, len(countries_df) + 1))
     countries_df.to_sql("d_country", conn, if_exists="replace", index=False)
 
@@ -179,6 +178,17 @@ def load_dimensions(conn):
     sources_df = pd.read_csv(f"{CLEAN_DATA_DIR}/dim_sources.csv")
     sources_df.insert(0, "id_source", range(1, len(sources_df) + 1))
     sources_df.to_sql("d_source", conn, if_exists="replace", index=False)
+
+    # Dimension entreprises (simple)
+    companies_data = [
+        {"id_company": 1, "company_name": "Google", "workforce_size": "10,000+", "sector": "Technology"},
+        {"id_company": 2, "company_name": "Doctolib", "workforce_size": "1,001-5,000", "sector": "Healthcare Tech"},
+        {"id_company": 3, "company_name": "TotalEnergies", "workforce_size": "10,000+", "sector": "Energy"},
+        {"id_company": 4, "company_name": "Back Market", "workforce_size": "51-200", "sector": "E-commerce"},
+        {"id_company": 5, "company_name": "Autres", "workforce_size": "Unknown", "sector": "Various"}
+    ]
+    companies_df = pd.DataFrame(companies_data)
+    companies_df.to_sql("d_company", conn, if_exists="replace", index=False)
 
     # Dimension dates (générée)
     dates_data = []
@@ -207,10 +217,8 @@ def load_dimensions(conn):
 
 
 def load_job_offers(conn):
-    """Charge les offres d'emploi"""
+    """Charge les offres d'emploi de toutes les sources"""
     logger.info("Chargement des offres d'emploi")
-
-    df = pd.read_csv(f"{CLEAN_DATA_DIR}/adzuna_jobs_clean.csv")
 
     # Mapping vers les IDs de dimension
     country_map = (
@@ -224,68 +232,88 @@ def load_job_offers(conn):
         .to_dict()
     )
 
-    # Traitement par chunks pour optimiser
     job_data = []
-    for _, row in df.iterrows():
-        # Extraction date
-        created_date = pd.to_datetime(row["created"], errors="coerce")
-        date_key = (
-            created_date.strftime("%Y-%m-%d")
-            if pd.notna(created_date)
-            else "2024-06-30"
-        )
 
-        # Mapping IDs
-        country_code = {
-            "France": "FR",
-            "Germany": "DE",
-            "Netherlands": "NL",
-            "Spain": "ES",
-            "Italy": "IT",
-            "Belgium": "BE",
-            "Switzerland": "CH",
-            "Austria":"AT",
-            "Poland": "PL"
-        }.get(row["country_name"])
-        id_country = country_map.get(country_code, 1)
-        id_source = source_map.get("Adzuna", 1)
+    # 1. ADZUNA
+    logger.info("Chargement Adzuna...")
+    try:
+        df_adzuna = pd.read_csv(f"{CLEAN_DATA_DIR}/adzuna_jobs_clean.csv")
+        for _, row in df_adzuna.iterrows():
+            created_date = pd.to_datetime(row["created"], errors="coerce")
+            date_key = created_date.strftime("%Y-%m-%d") if pd.notna(created_date) else "2024-06-30"
+            
+            country_code = {"France": "FR", "Germany": "DE", "Netherlands": "NL", "Spain": "ES", "Italy": "IT", "Belgium": "BE", "Switzerland": "CH", "Austria":"AT", "Poland": "PL"}.get(row["country_name"])
+            id_country = country_map.get(country_code, 1)
+            id_source = source_map.get("Adzuna", 1)
 
-        # Traitement des compétences
-        skills = (
-            eval(row["skills"])
-            if pd.notna(row["skills"]) and row["skills"] != "[]"
-            else ["Unknown"]
-        )
-        for skill in skills:
-            skill_id = conn.execute(
-                "SELECT id_skill FROM d_skill WHERE tech_label = ?", (skill,)
-            ).fetchone()
-            id_skill = skill_id[0] if skill_id else 1
+            skills = eval(row["skills"]) if pd.notna(row["skills"]) and str(row["skills"]) != "[]" else ["Unknown"]
+            for skill in skills:
+                skill_id = conn.execute("SELECT id_skill FROM d_skill WHERE tech_label = ?", (skill,)).fetchone()
+                id_skill = skill_id[0] if skill_id else 1
 
-            job_data.append(
-                {
-                    "id_country": id_country,
-                    "id_skill": id_skill,
-                    "id_source": id_source,
-                    "id_company": 1,
-                    "date_key": date_key,
-                    "title": row["title"],
-                    "location": row["location"],
-                    "salary_min": (
-                        row["salary_min"] if pd.notna(row["salary_min"]) else None
-                    ),
-                    "salary_max": (
-                        row["salary_max"] if pd.notna(row["salary_max"]) else None
-                    ),
-                    "salary_avg": (
-                        row["salary_avg"] if pd.notna(row["salary_avg"]) else None
-                    ),
-                }
-            )
+                job_data.append({
+                    "id_country": id_country, "id_skill": id_skill, "id_source": id_source, "id_company": 1,
+                    "date_key": date_key, "title": row["title"], "location": row["location"],
+                    "salary_min": row["salary_min"] if pd.notna(row["salary_min"]) else None,
+                    "salary_max": row["salary_max"] if pd.notna(row["salary_max"]) else None,
+                    "salary_avg": row["salary_avg"] if pd.notna(row["salary_avg"]) else None,
+                })
+    except Exception as e:
+        logger.error(f"Erreur Adzuna: {e}")
+
+    # 2. INDEED
+    logger.info("Chargement Indeed...")
+    try:
+        df_indeed = pd.read_csv(f"{CLEAN_DATA_DIR}/indeed_jobs_clean.csv")
+        for _, row in df_indeed.iterrows():
+            date_posted = pd.to_datetime(row["date_posted"], errors="coerce")
+            date_key = date_posted.strftime("%Y-%m-%d") if pd.notna(date_posted) else "2024-06-30"
+            
+            id_source = source_map.get("Indeed", 5)
+            skills = eval(row["skills"]) if pd.notna(row["skills"]) and str(row["skills"]) != "[]" else ["Unknown"]
+            
+            for skill in skills:
+                skill_id = conn.execute("SELECT id_skill FROM d_skill WHERE tech_label = ?", (skill,)).fetchone()
+                id_skill = skill_id[0] if skill_id else 1
+
+                job_data.append({
+                    "id_country": 1, "id_skill": id_skill, "id_source": id_source, "id_company": 1,
+                    "date_key": date_key, "title": row["title"], "location": row["location"],
+                    "salary_min": row["min_amount"] if pd.notna(row["min_amount"]) else None,
+                    "salary_max": row["max_amount"] if pd.notna(row["max_amount"]) else None,
+                    "salary_avg": row["salary_avg"] if pd.notna(row["salary_avg"]) else None,
+                })
+    except Exception as e:
+        logger.error(f"Erreur Indeed: {e}")
+
+    # 3. LINKEDIN
+    logger.info("Chargement LinkedIn...")
+    try:
+        df_linkedin = pd.read_csv(f"{CLEAN_DATA_DIR}/linkedin_jobs_clean.csv")
+        for _, row in df_linkedin.iterrows():
+            date_posted = pd.to_datetime(row["date_posted"], errors="coerce")
+            date_key = date_posted.strftime("%Y-%m-%d") if pd.notna(date_posted) else "2024-06-30"
+            
+            id_source = source_map.get("LinkedIn", 6)
+            skills = eval(row["skills"]) if pd.notna(row["skills"]) and str(row["skills"]) != "[]" else ["Unknown"]
+            
+            for skill in skills:
+                skill_id = conn.execute("SELECT id_skill FROM d_skill WHERE tech_label = ?", (skill,)).fetchone()
+                id_skill = skill_id[0] if skill_id else 1
+
+                job_data.append({
+                    "id_country": 1, "id_skill": id_skill, "id_source": id_source, "id_company": 1,
+                    "date_key": date_key, "title": row["title"], "location": row["location"],
+                    "salary_min": row["min_amount"] if pd.notna(row["min_amount"]) else None,
+                    "salary_max": row["max_amount"] if pd.notna(row["max_amount"]) else None,
+                    "salary_avg": row["salary_avg"] if pd.notna(row["salary_avg"]) else None,
+                })
+    except Exception as e:
+        logger.error(f"Erreur LinkedIn: {e}")
 
     jobs_df = pd.DataFrame(job_data)
     jobs_df.to_sql("f_job_offers", conn, if_exists="replace", index=False)
-    logger.info(f"Offres d'emploi chargées: {len(jobs_df)}")
+    logger.info(f"Offres d'emploi chargées: {len(jobs_df)} (Adzuna + Indeed + LinkedIn)")
 
 
 def load_github_trends(conn):

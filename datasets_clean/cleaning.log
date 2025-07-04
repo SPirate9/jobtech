@@ -133,3 +133,332 @@
 2025-07-04 10:40:31.935 | INFO     | __main__:main:382 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
 2025-07-04 10:40:31.935 | INFO     | __main__:main:382 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
 2025-07-04 10:40:31.935 | INFO     | __main__:main:382 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:00:47.033 | INFO     | __main__:<module>:26 - Connexion MongoDB réussie.
+2025-07-04 11:00:47.038 | INFO     | __main__:main:234 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:00:47.038 | INFO     | __main__:clean_adzuna_jobs:32 - Nettoyage des données Adzuna
+2025-07-04 11:00:53.581 | INFO     | __main__:clean_adzuna_jobs:36 - Lignes initiales : 3496
+2025-07-04 11:00:53.682 | INFO     | __main__:clean_adzuna_jobs:103 - Lignes après nettoyage complet : 2589
+2025-07-04 11:00:53.772 | INFO     | __main__:clean_adzuna_jobs:106 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:00:53.774 | INFO     | __main__:clean_github_trends:110 - Nettoyage des données GitHub
+2025-07-04 11:00:54.562 | INFO     | __main__:clean_github_trends:122 - GitHub nettoyé: 1700 repos
+2025-07-04 11:00:54.562 | INFO     | __main__:clean_google_trends:126 - Nettoyage des données Google Trends
+2025-07-04 11:00:54.632 | INFO     | __main__:clean_google_trends:146 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:00:54.633 | INFO     | __main__:clean_stackoverflow_survey:150 - Nettoyage des données Stack Overflow
+2025-07-04 11:02:15.429 | INFO     | __main__:clean_stackoverflow_survey:189 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:02:15.432 | INFO     | __main__:create_dimension_tables:193 - Création des tables de dimensions
+2025-07-04 11:02:15.443 | INFO     | __main__:create_dimension_tables:230 - Tables de dimensions créées
+2025-07-04 11:02:15.443 | INFO     | __main__:main:243 - Nettoyage terminé en 88.4s
+2025-07-04 11:02:15.444 | INFO     | __main__:main:248 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:02:15.444 | INFO     | __main__:main:248 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:02:15.444 | INFO     | __main__:main:248 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:02:15.445 | INFO     | __main__:main:248 - Fichier nettoyé: dim_sources.csv (62 bytes)
+2025-07-04 11:02:15.445 | INFO     | __main__:main:248 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:02:15.445 | INFO     | __main__:main:248 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:02:15.445 | INFO     | __main__:main:248 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:05:24.203 | INFO     | __main__:<module>:26 - Connexion MongoDB réussie.
+2025-07-04 11:05:24.205 | INFO     | __main__:main:330 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:05:24.205 | INFO     | __main__:clean_adzuna_jobs:32 - Nettoyage des données Adzuna
+2025-07-04 11:05:29.324 | INFO     | __main__:clean_adzuna_jobs:36 - Lignes initiales : 3496
+2025-07-04 11:05:29.429 | INFO     | __main__:clean_adzuna_jobs:103 - Lignes après nettoyage complet : 2589
+2025-07-04 11:05:29.518 | INFO     | __main__:clean_adzuna_jobs:106 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:05:29.519 | INFO     | __main__:clean_github_trends:110 - Nettoyage des données GitHub
+2025-07-04 11:05:32.244 | INFO     | __main__:clean_github_trends:122 - GitHub nettoyé: 1700 repos
+2025-07-04 11:05:32.245 | INFO     | __main__:clean_google_trends:126 - Nettoyage des données Google Trends
+2025-07-04 11:05:32.321 | INFO     | __main__:clean_google_trends:146 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:05:32.322 | INFO     | __main__:clean_stackoverflow_survey:150 - Nettoyage des données Stack Overflow
+2025-07-04 11:06:21.474 | INFO     | __main__:clean_stackoverflow_survey:189 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:06:21.475 | INFO     | __main__:clean_indeed_jobs:193 - Nettoyage des données Indeed
+2025-07-04 11:06:29.578 | INFO     | __main__:clean_indeed_jobs:196 - Lignes initiales : 539
+2025-07-04 11:06:29.596 | INFO     | __main__:clean_indeed_jobs:234 - Lignes après nettoyage : 398
+2025-07-04 11:06:29.697 | INFO     | __main__:clean_indeed_jobs:236 - Indeed nettoyé: 398 offres
+2025-07-04 11:06:29.699 | INFO     | __main__:clean_linkedin_jobs:240 - Nettoyage des données LinkedIn
+2025-07-04 11:06:35.287 | INFO     | __main__:clean_linkedin_jobs:243 - Lignes initiales : 783
+2025-07-04 11:06:35.299 | INFO     | __main__:clean_linkedin_jobs:283 - Lignes après nettoyage : 783
+2025-07-04 11:06:35.419 | INFO     | __main__:clean_linkedin_jobs:285 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:06:35.422 | INFO     | __main__:create_dimension_tables:288 - Création des tables de dimensions
+2025-07-04 11:06:35.434 | INFO     | __main__:create_dimension_tables:326 - Tables de dimensions créées
+2025-07-04 11:06:35.434 | INFO     | __main__:main:341 - Nettoyage terminé en 71.2s
+2025-07-04 11:06:35.434 | INFO     | __main__:main:346 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: linkedin_jobs_clean.csv (4246361 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: indeed_jobs_clean.csv (2158186 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:06:35.435 | INFO     | __main__:main:346 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:06:35.436 | INFO     | __main__:main:346 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:17:53.073 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:17:53.075 | INFO     | __main__:main:354 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:17:53.075 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:18:20.033 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:18:20.232 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:18:20.369 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:18:20.371 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:18:27.287 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:18:27.289 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:18:27.383 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:18:27.383 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:19:50.967 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:19:50.969 | INFO     | __main__:main:354 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:19:50.969 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:20:58.730 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:20:58.810 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:20:58.897 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:20:58.899 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:21:06.233 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:21:06.233 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:21:06.589 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:21:06.589 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:23:57.288 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:23:57.289 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 11:24:07.073 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 11:24:08.166 | INFO     | __main__:clean_indeed_jobs:240 - Lignes après nettoyage : 398
+2025-07-04 11:24:08.265 | INFO     | __main__:clean_indeed_jobs:242 - Indeed nettoyé: 398 offres
+2025-07-04 11:24:08.267 | INFO     | __main__:clean_linkedin_jobs:246 - Nettoyage des données LinkedIn
+2025-07-04 11:24:19.429 | INFO     | __main__:clean_linkedin_jobs:249 - Lignes initiales : 783
+2025-07-04 11:24:24.605 | INFO     | __main__:clean_linkedin_jobs:293 - Lignes après nettoyage : 783
+2025-07-04 11:24:24.816 | INFO     | __main__:clean_linkedin_jobs:295 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:24:24.822 | INFO     | __main__:create_dimension_tables:298 - Création des tables de dimensions
+2025-07-04 11:24:24.828 | INFO     | __main__:create_dimension_tables:336 - Tables de dimensions créées
+2025-07-04 11:24:24.829 | INFO     | __main__:main:365 - Nettoyage terminé en 273.9s
+2025-07-04 11:24:24.829 | INFO     | __main__:main:370 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:24:24.829 | INFO     | __main__:main:370 - Fichier nettoyé: linkedin_jobs_clean.csv (7110598 bytes)
+2025-07-04 11:24:24.829 | INFO     | __main__:main:370 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:24:24.829 | INFO     | __main__:main:370 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:24:24.830 | INFO     | __main__:main:370 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:24:24.830 | INFO     | __main__:main:370 - Fichier nettoyé: indeed_jobs_clean.csv (3775266 bytes)
+2025-07-04 11:24:24.830 | INFO     | __main__:main:370 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:24:24.830 | INFO     | __main__:main:370 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:24:24.830 | INFO     | __main__:main:370 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:26:44.870 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:26:44.871 | INFO     | __main__:main:354 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:26:44.872 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:26:53.955 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:26:54.142 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:26:54.259 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:26:54.261 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:26:55.196 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:26:55.197 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:26:55.261 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:26:55.261 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:28:05.962 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:28:05.965 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 11:28:09.867 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 11:28:10.917 | INFO     | __main__:clean_indeed_jobs:240 - Lignes après nettoyage : 398
+2025-07-04 11:28:10.978 | INFO     | __main__:clean_indeed_jobs:242 - Indeed nettoyé: 398 offres
+2025-07-04 11:28:10.980 | INFO     | __main__:clean_linkedin_jobs:246 - Nettoyage des données LinkedIn
+2025-07-04 11:28:29.798 | INFO     | __main__:clean_linkedin_jobs:249 - Lignes initiales : 783
+2025-07-04 11:28:32.881 | INFO     | __main__:clean_linkedin_jobs:293 - Lignes après nettoyage : 783
+2025-07-04 11:28:32.981 | INFO     | __main__:clean_linkedin_jobs:295 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:28:32.985 | INFO     | __main__:create_dimension_tables:298 - Création des tables de dimensions
+2025-07-04 11:28:32.990 | INFO     | __main__:create_dimension_tables:336 - Tables de dimensions créées
+2025-07-04 11:28:32.990 | INFO     | __main__:main:365 - Nettoyage terminé en 108.1s
+2025-07-04 11:28:32.990 | INFO     | __main__:main:370 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: linkedin_jobs_clean.csv (3384023 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: indeed_jobs_clean.csv (1841004 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:28:32.991 | INFO     | __main__:main:370 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:31:53.033 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:31:53.035 | INFO     | __main__:main:417 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:31:53.035 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:31:56.740 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:31:56.886 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:31:57.018 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:31:57.021 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:31:58.098 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:31:58.099 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:31:58.215 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:31:58.216 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:33:38.519 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:33:38.522 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 11:33:41.991 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 11:33:42.111 | INFO     | __main__:clean_indeed_jobs:271 - Lignes après nettoyage : 398
+2025-07-04 11:33:42.125 | INFO     | __main__:clean_indeed_jobs:273 - Indeed nettoyé: 398 offres
+2025-07-04 11:33:42.127 | INFO     | __main__:clean_linkedin_jobs:277 - Nettoyage des données LinkedIn
+2025-07-04 11:33:46.331 | INFO     | __main__:clean_linkedin_jobs:280 - Lignes initiales : 783
+2025-07-04 11:33:46.538 | INFO     | __main__:clean_linkedin_jobs:356 - Lignes après nettoyage : 783
+2025-07-04 11:33:46.567 | INFO     | __main__:clean_linkedin_jobs:358 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:33:46.571 | INFO     | __main__:create_dimension_tables:361 - Création des tables de dimensions
+2025-07-04 11:33:46.580 | INFO     | __main__:create_dimension_tables:399 - Tables de dimensions créées
+2025-07-04 11:33:46.580 | INFO     | __main__:main:428 - Nettoyage terminé en 113.5s
+2025-07-04 11:33:46.580 | INFO     | __main__:main:433 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:33:46.581 | INFO     | __main__:main:433 - Fichier nettoyé: linkedin_jobs_clean.csv (518925 bytes)
+2025-07-04 11:33:46.581 | INFO     | __main__:main:433 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:33:46.581 | INFO     | __main__:main:433 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:33:46.581 | INFO     | __main__:main:433 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:33:46.581 | INFO     | __main__:main:433 - Fichier nettoyé: indeed_jobs_clean.csv (223556 bytes)
+2025-07-04 11:33:46.581 | INFO     | __main__:main:433 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:33:46.582 | INFO     | __main__:main:433 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:33:46.582 | INFO     | __main__:main:433 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:40:54.049 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:40:54.051 | INFO     | __main__:main:446 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:40:54.051 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:41:00.819 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:41:00.930 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:41:01.134 | INFO     | __main__:clean_adzuna_jobs:115 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:41:01.137 | INFO     | __main__:clean_github_trends:119 - Nettoyage des données GitHub
+2025-07-04 11:41:01.724 | INFO     | __main__:clean_github_trends:131 - GitHub nettoyé: 1700 repos
+2025-07-04 11:41:01.724 | INFO     | __main__:clean_google_trends:135 - Nettoyage des données Google Trends
+2025-07-04 11:41:01.775 | INFO     | __main__:clean_google_trends:155 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:41:01.776 | INFO     | __main__:clean_stackoverflow_survey:159 - Nettoyage des données Stack Overflow
+2025-07-04 11:41:56.945 | INFO     | __main__:clean_stackoverflow_survey:198 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:41:56.947 | INFO     | __main__:clean_indeed_jobs:202 - Nettoyage des données Indeed
+2025-07-04 11:42:04.921 | INFO     | __main__:clean_indeed_jobs:205 - Lignes initiales : 539
+2025-07-04 11:42:05.045 | INFO     | __main__:clean_indeed_jobs:287 - Colonne supprimée: company_url
+2025-07-04 11:42:05.046 | INFO     | __main__:clean_indeed_jobs:287 - Colonne supprimée: company_logo
+2025-07-04 11:42:05.046 | INFO     | __main__:clean_indeed_jobs:289 - Lignes après nettoyage : 398
+2025-07-04 11:42:05.059 | INFO     | __main__:clean_indeed_jobs:291 - Indeed nettoyé: 398 offres
+2025-07-04 11:42:05.061 | INFO     | __main__:clean_linkedin_jobs:295 - Nettoyage des données LinkedIn
+2025-07-04 11:42:10.216 | INFO     | __main__:clean_linkedin_jobs:298 - Lignes initiales : 783
+2025-07-04 11:42:10.433 | INFO     | __main__:clean_linkedin_jobs:383 - Colonne supprimée: company_url
+2025-07-04 11:42:10.437 | INFO     | __main__:clean_linkedin_jobs:383 - Colonne supprimée: company_logo
+2025-07-04 11:42:10.437 | INFO     | __main__:clean_linkedin_jobs:385 - Lignes après nettoyage : 783
+2025-07-04 11:42:10.458 | INFO     | __main__:clean_linkedin_jobs:387 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:42:10.460 | INFO     | __main__:create_dimension_tables:390 - Création des tables de dimensions
+2025-07-04 11:42:10.470 | INFO     | __main__:create_dimension_tables:428 - Tables de dimensions créées
+2025-07-04 11:42:10.470 | INFO     | __main__:main:457 - Nettoyage terminé en 76.4s
+2025-07-04 11:42:10.471 | INFO     | __main__:main:462 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:42:10.471 | INFO     | __main__:main:462 - Fichier nettoyé: linkedin_jobs_clean.csv (329983 bytes)
+2025-07-04 11:42:10.471 | INFO     | __main__:main:462 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:42:10.471 | INFO     | __main__:main:462 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:42:10.471 | INFO     | __main__:main:462 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:42:10.472 | INFO     | __main__:main:462 - Fichier nettoyé: indeed_jobs_clean.csv (184682 bytes)
+2025-07-04 11:42:10.472 | INFO     | __main__:main:462 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:42:10.472 | INFO     | __main__:main:462 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:42:10.472 | INFO     | __main__:main:462 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:48:41.763 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:48:41.765 | INFO     | __main__:main:439 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:48:41.766 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:48:48.973 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:48:49.119 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:48:49.292 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:48:49.294 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:48:50.599 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:48:50.600 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:48:50.663 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:48:50.663 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:50:01.501 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:50:01.502 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 11:50:09.306 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 11:50:09.407 | INFO     | __main__:clean_indeed_jobs:280 - Colonne supprimée: company_url
+2025-07-04 11:50:09.408 | INFO     | __main__:clean_indeed_jobs:280 - Colonne supprimée: company_logo
+2025-07-04 11:50:09.408 | INFO     | __main__:clean_indeed_jobs:282 - Lignes après nettoyage : 398
+2025-07-04 11:50:09.420 | INFO     | __main__:clean_indeed_jobs:284 - Indeed nettoyé: 398 offres
+2025-07-04 11:50:09.422 | INFO     | __main__:clean_linkedin_jobs:288 - Nettoyage des données LinkedIn
+2025-07-04 11:50:14.626 | INFO     | __main__:clean_linkedin_jobs:291 - Lignes initiales : 783
+2025-07-04 11:50:14.945 | INFO     | __main__:clean_linkedin_jobs:376 - Colonne supprimée: company_url
+2025-07-04 11:50:14.949 | INFO     | __main__:clean_linkedin_jobs:376 - Colonne supprimée: company_logo
+2025-07-04 11:50:14.950 | INFO     | __main__:clean_linkedin_jobs:378 - Lignes après nettoyage : 783
+2025-07-04 11:50:14.973 | INFO     | __main__:clean_linkedin_jobs:380 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:50:14.976 | INFO     | __main__:create_dimension_tables:383 - Création des tables de dimensions
+2025-07-04 11:50:14.983 | INFO     | __main__:create_dimension_tables:421 - Tables de dimensions créées
+2025-07-04 11:50:14.983 | INFO     | __main__:main:450 - Nettoyage terminé en 93.2s
+2025-07-04 11:50:14.983 | INFO     | __main__:main:455 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:50:14.984 | INFO     | __main__:main:455 - Fichier nettoyé: linkedin_jobs_clean.csv (329983 bytes)
+2025-07-04 11:50:14.984 | INFO     | __main__:main:455 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:50:14.985 | INFO     | __main__:main:455 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:50:14.985 | INFO     | __main__:main:455 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:50:14.985 | INFO     | __main__:main:455 - Fichier nettoyé: indeed_jobs_clean.csv (184682 bytes)
+2025-07-04 11:50:14.985 | INFO     | __main__:main:455 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:50:14.985 | INFO     | __main__:main:455 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:50:14.986 | INFO     | __main__:main:455 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:52:17.376 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:52:17.378 | INFO     | __main__:main:433 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:52:17.378 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:52:19.953 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:52:20.324 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:52:20.576 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:52:20.577 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:52:21.262 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:52:21.263 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:52:21.309 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:52:21.310 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:53:01.706 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:53:01.709 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 11:53:04.042 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 11:53:04.148 | INFO     | __main__:clean_indeed_jobs:279 - Lignes après nettoyage : 398
+2025-07-04 11:53:04.158 | INFO     | __main__:clean_indeed_jobs:281 - Indeed nettoyé: 398 offres
+2025-07-04 11:53:04.160 | INFO     | __main__:clean_linkedin_jobs:285 - Nettoyage des données LinkedIn
+2025-07-04 11:53:08.409 | INFO     | __main__:clean_linkedin_jobs:288 - Lignes initiales : 783
+2025-07-04 11:53:08.696 | INFO     | __main__:clean_linkedin_jobs:372 - Lignes après nettoyage : 783
+2025-07-04 11:53:08.715 | INFO     | __main__:clean_linkedin_jobs:374 - LinkedIn nettoyé: 783 offres
+2025-07-04 11:53:08.718 | INFO     | __main__:create_dimension_tables:377 - Création des tables de dimensions
+2025-07-04 11:53:08.727 | INFO     | __main__:create_dimension_tables:415 - Tables de dimensions créées
+2025-07-04 11:53:08.728 | INFO     | __main__:main:444 - Nettoyage terminé en 51.3s
+2025-07-04 11:53:08.728 | INFO     | __main__:main:449 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:53:08.728 | INFO     | __main__:main:449 - Fichier nettoyé: linkedin_jobs_clean.csv (232961 bytes)
+2025-07-04 11:53:08.728 | INFO     | __main__:main:449 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:53:08.728 | INFO     | __main__:main:449 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:53:08.728 | INFO     | __main__:main:449 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:53:08.729 | INFO     | __main__:main:449 - Fichier nettoyé: indeed_jobs_clean.csv (123525 bytes)
+2025-07-04 11:53:08.729 | INFO     | __main__:main:449 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:53:08.729 | INFO     | __main__:main:449 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:53:08.729 | INFO     | __main__:main:449 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:56:58.901 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:56:58.903 | INFO     | __main__:main:451 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:56:58.904 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:57:11.754 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:57:11.855 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:57:11.957 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:57:11.959 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:57:12.652 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:57:12.653 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:57:12.725 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:57:12.726 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 11:57:45.388 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 11:57:45.391 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 11:57:46.861 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 11:57:47.035 | INFO     | __main__:clean_indeed_jobs:288 - Lignes après nettoyage : 0
+2025-07-04 11:57:47.036 | INFO     | __main__:clean_indeed_jobs:290 - Indeed nettoyé: 0 offres
+2025-07-04 11:57:47.038 | INFO     | __main__:clean_linkedin_jobs:294 - Nettoyage des données LinkedIn
+2025-07-04 11:57:54.973 | INFO     | __main__:clean_linkedin_jobs:297 - Lignes initiales : 783
+2025-07-04 11:57:55.238 | INFO     | __main__:clean_linkedin_jobs:390 - Lignes après nettoyage : 0
+2025-07-04 11:57:55.239 | INFO     | __main__:clean_linkedin_jobs:392 - LinkedIn nettoyé: 0 offres
+2025-07-04 11:57:55.241 | INFO     | __main__:create_dimension_tables:395 - Création des tables de dimensions
+2025-07-04 11:57:55.250 | INFO     | __main__:create_dimension_tables:433 - Tables de dimensions créées
+2025-07-04 11:57:55.250 | INFO     | __main__:main:462 - Nettoyage terminé en 56.3s
+2025-07-04 11:57:55.250 | INFO     | __main__:main:467 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 11:57:55.251 | INFO     | __main__:main:467 - Fichier nettoyé: linkedin_jobs_clean.csv (399 bytes)
+2025-07-04 11:57:55.251 | INFO     | __main__:main:467 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 11:57:55.251 | INFO     | __main__:main:467 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 11:57:55.251 | INFO     | __main__:main:467 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 11:57:55.251 | INFO     | __main__:main:467 - Fichier nettoyé: indeed_jobs_clean.csv (399 bytes)
+2025-07-04 11:57:55.252 | INFO     | __main__:main:467 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 11:57:55.252 | INFO     | __main__:main:467 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 11:57:55.252 | INFO     | __main__:main:467 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
+2025-07-04 11:59:32.553 | INFO     | __main__:<module>:28 - Connexion MongoDB réussie.
+2025-07-04 11:59:32.554 | INFO     | __main__:main:433 - Démarrage du nettoyage TalentInsight
+2025-07-04 11:59:32.554 | INFO     | __main__:clean_adzuna_jobs:34 - Nettoyage des données Adzuna
+2025-07-04 11:59:37.511 | INFO     | __main__:clean_adzuna_jobs:38 - Lignes initiales : 3496
+2025-07-04 11:59:37.595 | INFO     | __main__:clean_adzuna_jobs:105 - Lignes après nettoyage complet : 2589
+2025-07-04 11:59:37.693 | INFO     | __main__:clean_adzuna_jobs:108 - Adzuna nettoyé: 2589 offres
+2025-07-04 11:59:37.694 | INFO     | __main__:clean_github_trends:112 - Nettoyage des données GitHub
+2025-07-04 11:59:38.658 | INFO     | __main__:clean_github_trends:124 - GitHub nettoyé: 1700 repos
+2025-07-04 11:59:38.658 | INFO     | __main__:clean_google_trends:128 - Nettoyage des données Google Trends
+2025-07-04 11:59:38.749 | INFO     | __main__:clean_google_trends:148 - Google Trends nettoyé: 1656 points de données
+2025-07-04 11:59:38.749 | INFO     | __main__:clean_stackoverflow_survey:152 - Nettoyage des données Stack Overflow
+2025-07-04 12:00:33.739 | INFO     | __main__:clean_stackoverflow_survey:191 - Stack Overflow nettoyé: 1479 réponses
+2025-07-04 12:00:33.741 | INFO     | __main__:clean_indeed_jobs:195 - Nettoyage des données Indeed
+2025-07-04 12:00:39.858 | INFO     | __main__:clean_indeed_jobs:198 - Lignes initiales : 539
+2025-07-04 12:00:39.977 | INFO     | __main__:clean_indeed_jobs:279 - Lignes après nettoyage : 398
+2025-07-04 12:00:39.988 | INFO     | __main__:clean_indeed_jobs:281 - Indeed nettoyé: 398 offres
+2025-07-04 12:00:39.991 | INFO     | __main__:clean_linkedin_jobs:285 - Nettoyage des données LinkedIn
+2025-07-04 12:00:46.999 | INFO     | __main__:clean_linkedin_jobs:288 - Lignes initiales : 783
+2025-07-04 12:00:47.257 | INFO     | __main__:clean_linkedin_jobs:372 - Lignes après nettoyage : 783
+2025-07-04 12:00:47.280 | INFO     | __main__:clean_linkedin_jobs:374 - LinkedIn nettoyé: 783 offres
+2025-07-04 12:00:47.285 | INFO     | __main__:create_dimension_tables:377 - Création des tables de dimensions
+2025-07-04 12:00:47.303 | INFO     | __main__:create_dimension_tables:415 - Tables de dimensions créées
+2025-07-04 12:00:47.303 | INFO     | __main__:main:444 - Nettoyage terminé en 74.7s
+2025-07-04 12:00:47.304 | INFO     | __main__:main:449 - Fichier nettoyé: dim_skills.csv (242 bytes)
+2025-07-04 12:00:47.304 | INFO     | __main__:main:449 - Fichier nettoyé: linkedin_jobs_clean.csv (232961 bytes)
+2025-07-04 12:00:47.304 | INFO     | __main__:main:449 - Fichier nettoyé: dim_countries.csv (308 bytes)
+2025-07-04 12:00:47.305 | INFO     | __main__:main:449 - Fichier nettoyé: adzuna_jobs_clean.csv (1828246 bytes)
+2025-07-04 12:00:47.305 | INFO     | __main__:main:449 - Fichier nettoyé: dim_sources.csv (71 bytes)
+2025-07-04 12:00:47.305 | INFO     | __main__:main:449 - Fichier nettoyé: indeed_jobs_clean.csv (123525 bytes)
+2025-07-04 12:00:47.307 | INFO     | __main__:main:449 - Fichier nettoyé: google_trends_clean.csv (80376 bytes)
+2025-07-04 12:00:47.308 | INFO     | __main__:main:449 - Fichier nettoyé: stackoverflow_survey_clean.csv (371496 bytes)
+2025-07-04 12:00:47.308 | INFO     | __main__:main:449 - Fichier nettoyé: github_trends_clean.csv (418124 bytes)
