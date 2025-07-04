@@ -5,7 +5,7 @@ Saad SHAHZAD, Thomas COUTAREL, Thomas YU, Noam BOULZE
 
 ## Description
 
-TalentInsight est une API REST Django développée pour le programme "TalentInsight" de la Commission européenne. Cette plateforme collecte, nettoie, centralise et expose via une API REST des données du marché de l'emploi technologique en Europe à partir de 4 sources de données hétérogènes.
+TalentInsight est une API REST Django développée pour le programme "TalentInsight" de la Commission européenne. Cette plateforme collecte, nettoie, centralise et expose via une API REST des données du marché de l'emploi technologique en Europe à partir de 6 sources de données hétérogènes.
 
 ## Objectifs
 
@@ -36,6 +36,7 @@ Sources → Scraping → Nettoyage → Data Lake → Data Warehouse → API REST
 3. **Google Trends** - Intérêt pour les technologies
 4. **Stack Overflow Survey** - Données de salaires et compétences (dataset 2024)
 5. **Indeed Jobs** - Offres d'emploi tech en Europe (via JobSpy)
+6. **LinkedIn Jobs** - Offres d'emploi professionnelles (via JobSpy)
 
 ## Installation et utilisation
 
