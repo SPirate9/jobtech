@@ -1,5 +1,8 @@
 # TalentInsight API - Plateforme de Cartographie du Marché de l'Emploi Tech en Europe
 
+### Collaborateur :
+Saad SHAHZAD, Thomas COUTAREL, Thomas YU, Noam BOULZE
+
 ## Description
 
 TalentInsight est une API REST Django développée pour le programme "TalentInsight" de la Commission européenne. Cette plateforme collecte, nettoie, centralise et expose via une API REST des données du marché de l'emploi technologique en Europe à partir de 4 sources de données hétérogènes.
