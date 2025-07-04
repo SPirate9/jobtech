@@ -236,9 +236,9 @@ def download_stackoverflow_survey():
         logger.error(f"Erreur Stack Overflow: {e}")
 
 
-def scrape_indeed_jobs():
-    """Collecte des offres d'emploi Indeed"""
-    logger.info("Démarrage collecte Indeed Europe")
+def scrape_indeed_linkedin_jobs():
+    """Collecte des offres d'emploi Indeed + LinkedIn"""
+    logger.info("Démarrage collecte Indeed + LinkedIn Europe")
     
     countries_config = {
         'France': {'country': 'France', 'location': 'Paris, France'},
@@ -249,7 +249,7 @@ def scrape_indeed_jobs():
         'Belgium': {'country': 'Belgium', 'location': 'Brussels, Belgium'},
         'Switzerland': {'country': 'Switzerland', 'location': 'Zurich, Switzerland'},
         'Austria': {'country': 'Austria', 'location': 'Vienna, Austria'},
-        'Poland': {'country': 'Poland', 'location': 'Vienna, Warsaw'}
+        'Poland': {'country': 'Poland', 'location': 'Warsaw, Poland'}
     }
     
     tech_keywords = [
@@ -258,28 +258,26 @@ def scrape_indeed_jobs():
         '"devops engineer" cloud',
         '"full stack developer" javascript',
         '"backend developer" API',
-        '"frontend developer" react',
-        '"mobile developer" android ios',
-        '"data engineer" ETL'
+        '"frontend developer" react'
     ]
     
-    indeed_jobs_data = []
+    all_jobs_data = []
     
     for country_name, config in countries_config.items():
-        logger.info(f"Collecte Indeed {country_name}")
+        logger.info(f"Collecte Indeed + LinkedIn {country_name}")
         
         for keyword in tech_keywords:
             try:
                 jobs = scrape_jobs(
-                    site_name=["indeed"],
+                    site_name=["indeed", "linkedin"],
                     search_term=keyword,
                     location=config['location'],
                     country_indeed=config['country'],
-                    results_wanted=30,
+                    results_wanted=25,
                     hours_old=168,
                     job_type='fulltime',
                     description_format='html',
-                    enforce_annual_salary=True,
+                    linkedin_fetch_description=True,
                     verbose=1
                 )
                 
@@ -287,25 +285,39 @@ def scrape_indeed_jobs():
                     jobs['search_keyword'] = keyword
                     jobs['target_country'] = country_name
                     jobs['scraped_at'] = pd.Timestamp.now()
-                    indeed_jobs_data.append(jobs)
-                    logger.info(f"Indeed {country_name}/{keyword}: {len(jobs)} offres")
+                    all_jobs_data.append(jobs)
+                    
+                    indeed_count = len(jobs[jobs['site'] == 'indeed'])
+                    linkedin_count = len(jobs[jobs['site'] == 'linkedin'])
+                    logger.info(f"{country_name}/{keyword}: Indeed={indeed_count}, LinkedIn={linkedin_count}")
                 
-                time.sleep(3)
+                time.sleep(5)
                     
             except Exception as e:
-                logger.error(f"Erreur Indeed {country_name}/{keyword}: {e}")
+                logger.error(f"Erreur {country_name}/{keyword}: {e}")
                 continue
     
-    if indeed_jobs_data:
-        all_jobs = pd.concat(indeed_jobs_data, ignore_index=True)
-        all_jobs = all_jobs.drop_duplicates(subset=['title', 'company', 'location'])
-        jobs_json = all_jobs.to_dict('records')
-        with open(f"{RAW_DATA_DIR}/indeed_jobs.json", "w", encoding="utf-8") as f:
-            json.dump(jobs_json, f, indent=2, ensure_ascii=False, default=str)
+    if all_jobs_data:
+        all_jobs = pd.concat(all_jobs_data, ignore_index=True)
+        all_jobs = all_jobs.drop_duplicates(subset=['title', 'company', 'location', 'site'])
+        indeed_jobs = all_jobs[all_jobs['site'] == 'indeed']
+        linkedin_jobs = all_jobs[all_jobs['site'] == 'linkedin']
         
-        logger.info(f"Indeed terminé: {len(all_jobs)} offres collectées")
+        if not indeed_jobs.empty:
+            indeed_json = indeed_jobs.to_dict('records')
+            with open(f"{RAW_DATA_DIR}/indeed_jobs.json", "w", encoding="utf-8") as f:
+                json.dump(indeed_json, f, indent=2, ensure_ascii=False, default=str)
+            logger.info(f"Indeed terminé: {len(indeed_jobs)} offres")
+        
+        if not linkedin_jobs.empty:
+            linkedin_json = linkedin_jobs.to_dict('records')
+            with open(f"{RAW_DATA_DIR}/linkedin_jobs.json", "w", encoding="utf-8") as f:
+                json.dump(linkedin_json, f, indent=2, ensure_ascii=False, default=str)
+            logger.info(f"LinkedIn terminé: {len(linkedin_jobs)} offres")
+        
+        logger.info(f"Total collecté: {len(all_jobs)} offres (Indeed + LinkedIn)")
     else:
-        logger.warning("Aucune donnée Indeed collectée")
+        logger.warning("Aucune donnée Indeed/LinkedIn collectée")
 
 
 def main():
@@ -316,7 +328,7 @@ def main():
     scrape_github_trends()
     scrape_google_trends()
     download_stackoverflow_survey()
-    scrape_indeed_jobs()
+    scrape_indeed_linkedin_jobs()
 
     end_time = datetime.now()
     duration = end_time - start_time

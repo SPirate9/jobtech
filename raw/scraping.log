@@ -234,3 +234,95 @@
 2025-07-02 12:18:45.636 | INFO     | __main__:main:330 - Fichier: indeed_jobs.json (1769643 bytes)
 2025-07-02 12:18:45.637 | INFO     | __main__:main:330 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
 2025-07-02 12:18:45.637 | INFO     | __main__:main:330 - Fichier: survey_results_public.csv (159525875 bytes)
+2025-07-04 09:13:31.753 | INFO     | __main__:scrape_adzuna_api:85 - Démarrage API Adzuna
+2025-07-04 09:14:58.388 | INFO     | __main__:scrape_adzuna_api:139 - Adzuna terminé: 1166 offres collectées
+2025-07-04 09:14:58.390 | INFO     | __main__:scrape_github_trends:144 - Démarrage GitHub API
+2025-07-04 09:15:23.292 | INFO     | __main__:scrape_github_trends:191 - GitHub terminé: 600 repos collectés
+2025-07-04 09:15:23.293 | INFO     | __main__:scrape_google_trends:30 - Démarrage Google Trends
+2025-07-04 09:15:23.417 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Python'
+2025-07-04 09:15:23.862 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Python' collectée.
+2025-07-04 09:15:49.863 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'JavaScript'
+2025-07-04 09:15:50.269 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'JavaScript' collectée.
+2025-07-04 09:16:14.274 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'React'
+2025-07-04 09:16:14.765 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'React' collectée.
+2025-07-04 09:16:38.771 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Go'
+2025-07-04 09:16:39.176 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Go' collectée.
+2025-07-04 09:17:03.181 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Rust'
+2025-07-04 09:17:03.924 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Rust' collectée.
+2025-07-04 09:17:28.929 | INFO     | __main__:scrape_google_trends:39 - Collecte de la tendance pour : 'Data Science'
+2025-07-04 09:17:29.418 | INFO     | __main__:scrape_google_trends:60 - Tendance pour 'Data Science' collectée.
+2025-07-04 09:18:01.428 | INFO     | __main__:scrape_google_trends:80 - Google Trends: 6 tendances collectées.
+2025-07-04 09:18:01.429 | INFO     | __main__:download_stackoverflow_survey:196 - Démarrage Stack Overflow Survey
+2025-07-04 09:18:18.964 | INFO     | __main__:download_stackoverflow_survey:231 - Stack Overflow: 159525875 bytes téléchargés
+2025-07-04 09:18:18.965 | INFO     | __main__:scrape_indeed_linkedin_jobs:241 - Démarrage collecte Indeed + LinkedIn Europe
+2025-07-04 09:18:18.965 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn France
+2025-07-04 09:19:12.498 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - France/"software engineer" python: Indeed=22, LinkedIn=25
+2025-07-04 09:19:55.340 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - France/"data scientist" machine learning: Indeed=25, LinkedIn=25
+2025-07-04 09:20:38.207 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - France/"devops engineer" cloud: Indeed=10, LinkedIn=13
+2025-07-04 09:21:06.364 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - France/"full stack developer" javascript: Indeed=1, LinkedIn=8
+2025-07-04 09:21:21.339 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - France/"backend developer" API: Indeed=1, LinkedIn=4
+2025-07-04 09:21:38.435 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - France/"frontend developer" react: Indeed=1, LinkedIn=2
+2025-07-04 09:21:43.440 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Germany
+2025-07-04 09:22:21.503 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Germany/"software engineer" python: Indeed=10, LinkedIn=25
+2025-07-04 09:23:01.666 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Germany/"data scientist" machine learning: Indeed=8, LinkedIn=19
+2025-07-04 09:23:44.232 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Germany/"devops engineer" cloud: Indeed=8, LinkedIn=15
+2025-07-04 09:24:01.511 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Germany/"full stack developer" javascript: Indeed=2, LinkedIn=8
+2025-07-04 09:24:17.580 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Germany/"backend developer" API: Indeed=1, LinkedIn=6
+2025-07-04 09:24:39.806 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Germany/"frontend developer" react: Indeed=1, LinkedIn=8
+2025-07-04 09:24:44.812 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Italy
+2025-07-04 09:25:26.926 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Italy/"software engineer" python: Indeed=4, LinkedIn=25
+2025-07-04 09:26:06.916 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Italy/"data scientist" machine learning: Indeed=7, LinkedIn=20
+2025-07-04 09:26:26.324 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Italy/"devops engineer" cloud: Indeed=1, LinkedIn=10
+2025-07-04 09:27:10.391 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Italy/"full stack developer" javascript: Indeed=4, LinkedIn=16
+2025-07-04 09:27:27.360 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Italy/"backend developer" API: Indeed=2, LinkedIn=5
+2025-07-04 09:27:43.117 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Italy/"frontend developer" react: Indeed=2, LinkedIn=4
+2025-07-04 09:27:48.122 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Spain
+2025-07-04 09:28:23.430 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Spain/"software engineer" python: Indeed=6, LinkedIn=25
+2025-07-04 09:29:10.407 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Spain/"data scientist" machine learning: Indeed=11, LinkedIn=25
+2025-07-04 09:29:54.704 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Spain/"devops engineer" cloud: Indeed=2, LinkedIn=25
+2025-07-04 09:30:38.051 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Spain/"full stack developer" javascript: Indeed=3, LinkedIn=20
+2025-07-04 09:31:17.562 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Spain/"backend developer" API: Indeed=0, LinkedIn=20
+2025-07-04 09:31:47.762 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Spain/"frontend developer" react: Indeed=0, LinkedIn=15
+2025-07-04 09:31:52.767 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Netherlands
+2025-07-04 09:32:39.200 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Netherlands/"software engineer" python: Indeed=25, LinkedIn=25
+2025-07-04 09:33:44.380 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Netherlands/"data scientist" machine learning: Indeed=25, LinkedIn=25
+2025-07-04 09:34:23.118 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Netherlands/"devops engineer" cloud: Indeed=15, LinkedIn=25
+2025-07-04 09:35:09.456 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Netherlands/"full stack developer" javascript: Indeed=1, LinkedIn=25
+2025-07-04 09:35:37.230 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Netherlands/"backend developer" API: Indeed=2, LinkedIn=9
+2025-07-04 09:37:02.857 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Netherlands/"frontend developer" react: Indeed=2, LinkedIn=18
+2025-07-04 09:37:07.864 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Belgium
+2025-07-04 09:38:08.948 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Belgium/"software engineer" python: Indeed=6, LinkedIn=25
+2025-07-04 09:38:56.242 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Belgium/"data scientist" machine learning: Indeed=5, LinkedIn=18
+2025-07-04 09:39:30.909 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Belgium/"devops engineer" cloud: Indeed=3, LinkedIn=19
+2025-07-04 09:40:13.226 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Belgium/"full stack developer" javascript: Indeed=2, LinkedIn=17
+2025-07-04 09:40:34.201 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Belgium/"backend developer" API: Indeed=3, LinkedIn=7
+2025-07-04 09:41:11.797 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Belgium/"frontend developer" react: Indeed=0, LinkedIn=13
+2025-07-04 09:41:16.801 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Switzerland
+2025-07-04 09:41:52.562 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Switzerland/"software engineer" python: Indeed=7, LinkedIn=25
+2025-07-04 09:42:36.491 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Switzerland/"data scientist" machine learning: Indeed=6, LinkedIn=20
+2025-07-04 09:42:51.908 | ERROR    | __main__:scrape_indeed_linkedin_jobs:298 - Erreur Switzerland/"devops engineer" cloud: Invalid country string: 'liechtenstein'. Valid countries are: argentina, australia, austria, bahrain, belgium, bulgaria, brazil, canada, chile, china, colombia, costa rica, croatia, cyprus, czech republic,czechia, denmark, ecuador, egypt, estonia, finland, france, germany, greece, hong kong, hungary, india, indonesia, ireland, israel, italy, japan, kuwait, latvia, lithuania, luxembourg, malaysia, malta, mexico, morocco, netherlands, new zealand, nigeria, norway, oman, pakistan, panama, peru, philippines, poland, portugal, qatar, romania, saudi arabia, singapore, slovakia, slovenia, south africa, south korea, spain, sweden, switzerland, taiwan, thailand, türkiye,turkey, ukraine, united arab emirates, uk,united kingdom, usa,us,united states, uruguay, venezuela, vietnam, usa/ca, worldwide
+2025-07-04 09:43:19.578 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Switzerland/"full stack developer" javascript: Indeed=0, LinkedIn=17
+2025-07-04 09:43:40.236 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Switzerland/"frontend developer" react: Indeed=0, LinkedIn=5
+2025-07-04 09:43:45.239 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Austria
+2025-07-04 09:44:39.014 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Austria/"software engineer" python: Indeed=2, LinkedIn=24
+2025-07-04 09:44:51.806 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Austria/"data scientist" machine learning: Indeed=0, LinkedIn=4
+2025-07-04 09:45:24.582 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Austria/"devops engineer" cloud: Indeed=3, LinkedIn=14
+2025-07-04 09:45:39.173 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Austria/"full stack developer" javascript: Indeed=0, LinkedIn=5
+2025-07-04 09:45:58.404 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Austria/"frontend developer" react: Indeed=0, LinkedIn=2
+2025-07-04 09:46:03.405 | INFO     | __main__:scrape_indeed_linkedin_jobs:267 - Collecte Indeed + LinkedIn Poland
+2025-07-04 09:46:45.290 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Poland/"software engineer" python: Indeed=19, LinkedIn=25
+2025-07-04 09:47:17.244 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Poland/"data scientist" machine learning: Indeed=4, LinkedIn=20
+2025-07-04 09:48:12.145 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Poland/"devops engineer" cloud: Indeed=11, LinkedIn=22
+2025-07-04 09:48:33.309 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Poland/"full stack developer" javascript: Indeed=1, LinkedIn=9
+2025-07-04 09:48:51.327 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Poland/"backend developer" API: Indeed=2, LinkedIn=7
+2025-07-04 09:49:08.513 | INFO     | __main__:scrape_indeed_linkedin_jobs:293 - Poland/"frontend developer" react: Indeed=2, LinkedIn=6
+2025-07-04 09:49:13.620 | INFO     | __main__:scrape_indeed_linkedin_jobs:314 - Indeed terminé: 253 offres
+2025-07-04 09:49:13.776 | INFO     | __main__:scrape_indeed_linkedin_jobs:321 - LinkedIn terminé: 783 offres
+2025-07-04 09:49:13.777 | INFO     | __main__:scrape_indeed_linkedin_jobs:323 - Total collecté: 1036 offres (Indeed + LinkedIn)
+2025-07-04 09:49:13.781 | INFO     | __main__:main:341 - Collecte terminée en 2142.0s
+2025-07-04 09:49:13.782 | INFO     | __main__:main:347 - Fichier: stackoverflow_survey_2024.csv (159525875 bytes)
+2025-07-04 09:49:13.782 | INFO     | __main__:main:347 - Fichier: linkedin_jobs.json (5040974 bytes)
+2025-07-04 09:49:13.782 | INFO     | __main__:main:347 - Fichier: google_trends.json (14135 bytes)
+2025-07-04 09:49:13.782 | INFO     | __main__:main:347 - Fichier: adzuna_jobs.json (1016816 bytes)
+2025-07-04 09:49:13.782 | INFO     | __main__:main:347 - Fichier: indeed_jobs.json (1618904 bytes)
+2025-07-04 09:49:13.783 | INFO     | __main__:main:347 - Fichier: github_trends.json (267094 bytes)

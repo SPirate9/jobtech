@@ -4,17 +4,7 @@ DE,Germany,Western Europe,EUR
 NL,Netherlands,Western Europe,EUR
 ES,Spain,Southern Europe,EUR
 IT,Italy,Southern Europe,EUR
-PL,Poland,Eastern Europe,PLN
-GB,United Kingdom,Western Europe,GBP
-US,United States,North America,USD
-CA,Canada,North America,CAD
-AU,Australia,Oceania,AUD
-BR,Brazil,South America,BRL
-IN,India,Asia,INR
-ZA,South Africa,Africa,ZAR
-CH,Switzerland,Western Europe,CHF
-AT,Austria,Western Europe,EUR
-SG,Singapore,Asia,SGD
-NZ,New Zealand,Oceania,NZD
-MX,Mexico,North America,MXN
+AT,Austria,Central Europe,EUR
 BE,Belgium,Western Europe,EUR
+CH,Switzerland,Western Europe,EUR
+PL,Poland,Eastern Europe,EUR
